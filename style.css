@@ -10,6 +10,8 @@
     --nav-link-hover: rgba(153, 188, 133, 0.2); /* Subtle hover using accent color */
     --gradient-start: #FDFaF6; /* Start of background gradient */
     --gradient-end: #E4EFE7; /* End of background gradient */
+    /* New variable for testimonial section specific background */
+    --testimonial-section-bg: #E4EFE7; /* A slightly different light color */
 }
 
 body {
@@ -273,13 +275,11 @@ section h2::after {
     margin: 0;
 }
 
-/* Content Showcase */
+/* Content Showcase (Practice Areas) */
 .content-grid {
     display: grid;
-    /* This will create columns that are at least 280px wide, and as many as can fit */
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
-    /* Optional: Add alignment for better centering if columns don't perfectly fill space */
     justify-content: center;
     align-items: stretch; /* Ensure all cards stretch to the same height */
 }
@@ -292,10 +292,9 @@ section h2::after {
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    display: flex; /* Make it a flex container */
-    flex-direction: column; /* Stack content vertically */
-    justify-content: flex-start; /* Align content to the top */
-    /* Ensure consistent height even if content length varies */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     min-height: 250px; /* Adjust this value if cards are too short or too tall */
 }
 
@@ -308,29 +307,37 @@ section h2::after {
     font-size: 1.6em;
     margin-bottom: 15px;
     color: var(--heading-color);
-    flex-shrink: 0; /* Prevent heading from shrinking */
+    flex-shrink: 0;
 }
 
 .content-card p {
     font-size: 0.95em;
     line-height: 1.6;
     color: var(--text-color);
-    flex-grow: 1; /* Allow paragraph to grow and fill available space */
+    flex-grow: 1;
 }
 
 .content-card .icon {
     font-size: 3em;
     color: var(--accent-color);
     margin-bottom: 20px;
-    flex-shrink: 0; /* Prevent icon from shrinking */
+    flex-shrink: 0;
 }
 
-/* Testimonials */
+/* Testimonials Section Specific Outlook */
+#testimonials {
+    background-color: var(--testimonial-section-bg); /* Use the new distinct background color */
+    padding: 100px 0; /* More vertical padding for visual separation */
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
 .testimonial-slider {
     position: relative;
     max-width: 800px;
     margin: 0 auto;
     overflow: hidden;
+    padding: 20px; /* Add padding to accommodate slider buttons visually */
 }
 
 .testimonial-wrapper {
@@ -341,55 +348,73 @@ section h2::after {
 .testimonial-card {
     flex: 0 0 100%;
     background-color: var(--card-bg);
-    border-radius: 12px;
-    border: 1px solid var(--border-color);
-    padding: 30px;
-    margin: 0 10px; /* Space between cards in wrapper */
+    border-radius: 15px; /* Slightly more rounded corners */
+    border: 2px solid var(--accent-color); /* More prominent border with accent color */
+    padding: 35px; /* More padding inside cards */
+    margin: 0 15px; /* More space between cards in wrapper */
     text-align: center;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    min-height: 200px; /* Ensure consistent height */
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1); /* Stronger shadow */
+    min-height: 220px; /* Ensure consistent height */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative; /* For pseudo-elements */
+    overflow: hidden; /* Ensure nothing spills out */
+}
+
+.testimonial-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8px; /* Accent line at the top */
+    background-color: var(--accent-color);
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
 }
 
 .testimonial-quote {
-    font-size: 1.2em;
+    font-size: 1.25em; /* Slightly larger quote */
     font-style: italic;
-    margin-bottom: 20px;
+    margin-bottom: 25px; /* More space below quote */
     color: var(--text-color);
     position: relative;
+    padding: 0 20px; /* Padding for quote marks */
 }
 
 .testimonial-quote::before, .testimonial-quote::after {
     font-family: 'Playfair Display', serif;
-    font-size: 3em;
+    font-size: 3.5em; /* Larger quote marks */
     color: var(--accent-color);
     position: absolute;
-    opacity: 0.2;
+    opacity: 0.3; /* A bit more visible opacity */
+    line-height: 0.8; /* Adjust line height for positioning */
 }
 
 .testimonial-quote::before {
     content: '“';
-    top: -20px;
-    left: -30px;
+    top: -15px; /* Adjust position */
+    left: -10px; /* Adjust position */
 }
 
 .testimonial-quote::after {
     content: '”';
-    bottom: -20px;
-    right: -30px;
+    bottom: -15px; /* Adjust position */
+    right: -10px; /* Adjust position */
 }
 
 .testimonial-author {
-    font-weight: 600;
+    font-weight: 700; /* Bolder author name */
     color: var(--heading-color);
+    margin-top: 10px; /* Space from quote */
 }
 
 .testimonial-company {
-    font-size: 0.9em;
+    font-size: 0.95em; /* Slightly larger company text */
     color: var(--text-color);
+    margin-top: 5px;
 }
 
 .slider-nav-btn {
@@ -399,25 +424,26 @@ section h2::after {
     background-color: var(--accent-color);
     color: white;
     border: none;
-    padding: 10px 15px;
+    padding: 12px 18px; /* Larger buttons */
     border-radius: 50%;
     cursor: pointer;
-    font-size: 1.5em;
+    font-size: 1.8em; /* Larger arrow icons */
     z-index: 10;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* More prominent shadow for buttons */
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .slider-nav-btn:hover {
     background-color: #7DA668; /* Darker accent on hover */
+    transform: translateY(-50%) scale(1.05); /* Slight grow effect */
 }
 
 .prev-btn {
-    left: -50px;
+    left: -60px; /* Push buttons further out */
 }
 
 .next-btn {
-    right: -50px;
+    right: -60px; /* Push buttons further out */
 }
 
 /* Contact Section */
@@ -454,18 +480,33 @@ section h2::after {
 
 .social-links {
     margin-top: 20px;
+    display: flex; /* Make social links flex for better alignment */
+    align-items: center;
+    gap: 15px; /* Space between icons */
 }
 
 .social-links a {
     font-size: 1.8em;
-    margin-right: 15px;
     color: var(--heading-color);
-    transition: color 0.3s ease;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    display: flex; /* Ensure images are treated as flex items */
+    align-items: center;
+    justify-content: center;
+}
+
+.social-links a img {
+    filter: invert(0) saturate(0) brightness(0) contrast(100%); /* Keeps original black if needed, or remove if icon source is already black */
+    transition: filter 0.3s ease;
 }
 
 .social-links a:hover {
-    color: var(--accent-color);
+    transform: translateY(-3px);
 }
+
+.social-links a:hover img {
+    filter: invert(45%) sepia(30%) saturate(600%) hue-rotate(80deg) brightness(95%) contrast(90%); /* Changes to accent color on hover */
+}
+
 
 .contact-form label {
     display: block;
@@ -603,15 +644,16 @@ footer .footer-links a:hover {
     }
 
     .testimonial-slider {
-        max-width: 90%; /* Adjust for smaller screens */
+        max-width: 100%; /* Use full width on smaller screens */
+        padding: 0; /* Remove side padding on small screens */
     }
 
     .prev-btn, .next-btn {
         position: static;
         transform: none;
-        margin: 10px;
+        margin: 10px auto; /* Center buttons below or above */
+        display: block;
     }
-
     .testimonial-slider-controls {
         display: flex;
         justify-content: center;
@@ -628,5 +670,11 @@ footer .footer-links a:hover {
     }
     section h2 {
         font-size: 2em;
+    }
+    .testimonial-card {
+        padding: 25px; /* Adjust padding for very small screens */
+    }
+    .testimonial-quote::before, .testimonial-quote::after {
+        font-size: 2.5em; /* Smaller quotes on very small screens */
     }
 }

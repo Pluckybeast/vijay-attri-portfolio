@@ -93,7 +93,6 @@
                         <span class="icon">💡</span>
                         <h3>Intellectual Property</h3>
                         <p>Protecting your innovations, trademarks, copyrights, and other intellectual assets through strategic legal measures.</p>
-                    </p>
                     </div>
                     <div class="content-card glass-effect">
                         <span class="icon">🏡</span>
@@ -138,6 +137,21 @@
                             <p class="testimonial-quote">"When I needed robust criminal defense, Vijay Attri was my unwavering support. His strategic approach and commitment to justice were evident throughout the process. A formidable lawyer!"</p>
                             <p class="testimonial-author">- Mr. Deepak Verma</p>
                             <p class="testimonial-company">Private Client</p>
+                        </div>
+                        <div class="testimonial-card glass-effect">
+                            <p class="testimonial-quote">"Mr. Attri's professionalism and strategic acumen in civil litigation are truly commendable. He secured a favorable judgment for me, and I couldn't be more satisfied with his service."</p>
+                            <p class="testimonial-author">- Mrs. Suman Devi</p>
+                            <p class="testimonial-company">Senior Homemaker</p>
+                        </div>
+                        <div class="testimonial-card glass-effect">
+                            <p class="testimonial-quote">"Choosing Vijay Attri for my real estate legal needs was the best decision. His thorough understanding of property law ensured my transaction was smooth and secure."</p>
+                            <p class="testimonial-author">- Mr. Vikramjeet Singh</p>
+                            <p class="testimonial-company">Property Consultant</p>
+                        </div>
+                        <div class="testimonial-card glass-effect">
+                            <p class="testimonial-quote">"He is not just a lawyer but a true guide. His insights into complex legal matters are invaluable, and his dedication to his clients is exemplary."</p>
+                            <p class="testimonial-author">- Ms. Pooja Khanna</p>
+                            <p class="testimonial-company">Business Owner</p>
                         </div>
                         </div>
                     <button class="slider-nav-btn prev-btn">&lt;</button>
@@ -231,31 +245,40 @@
         const testimonialWrapper = document.querySelector('.testimonial-wrapper');
         const prevBtn = document.querySelector('.prev-btn');
         const nextBtn = document.querySelector('.next-btn');
-        const testimonialCards = document.querySelectorAll('.testimonial-card');
+        // Re-select testimonialCards as the number might have changed
+        const testimonialCards = document.querySelectorAll('#testimonials .testimonial-wrapper .testimonial-card'); 
         const totalCards = testimonialCards.length;
         let currentIndex = 0;
 
         // Clone first and last cards for seamless looping effect
+        // Only clone if there are cards to clone
         if (totalCards > 0) {
             const firstCardClone = testimonialCards[0].cloneNode(true);
             const lastCardClone = testimonialCards[totalCards - 1].cloneNode(true);
             testimonialWrapper.appendChild(firstCardClone);
             testimonialWrapper.insertBefore(lastCardClone, testimonialCards[0]);
+            // Update testimonialCards NodeList to include clones for correct width calculation
+            const allTestimonialCards = document.querySelectorAll('#testimonials .testimonial-wrapper .testimonial-card');
+
             // Set initial position to show the first real card
             testimonialWrapper.style.transition = 'none';
-            testimonialWrapper.style.transform = `translateX(-${(currentIndex + 1) * (testimonialCards[0].offsetWidth + 20)}px)`;
+            // Use allTestimonialCards[0] for width calculation after clones are added
+            const cardWidth = allTestimonialCards[0].offsetWidth + 20; // Card width + margin
+            testimonialWrapper.style.transform = `translateX(-${(currentIndex + 1) * cardWidth}px)`;
             setTimeout(() => {
                 testimonialWrapper.style.transition = 'transform 0.5s ease-in-out';
             }, 0);
         }
 
         function updateSlider() {
-            const cardWidth = testimonialCards[0].offsetWidth + 20; // Card width + margin
+            const allTestimonialCards = document.querySelectorAll('#testimonials .testimonial-wrapper .testimonial-card');
+            const cardWidth = allTestimonialCards[0].offsetWidth + 20; // Card width + margin
             testimonialWrapper.style.transform = `translateX(-${(currentIndex + 1) * cardWidth}px)`;
         }
 
         testimonialWrapper.addEventListener('transitionend', () => {
-            const cardWidth = testimonialCards[0].offsetWidth + 20;
+            const allTestimonialCards = document.querySelectorAll('#testimonials .testimonial-wrapper .testimonial-card');
+            const cardWidth = allTestimonialCards[0].offsetWidth + 20;
             if (currentIndex === totalCards) {
                 testimonialWrapper.style.transition = 'none';
                 currentIndex = 0;
@@ -278,7 +301,7 @@
             if (currentIndex < totalCards) {
                 currentIndex++;
             } else {
-                // This else block is handled by the transitionend event for seamless loop
+                // This logic is handled by the transitionend event for seamless loop
             }
             updateSlider();
         });
@@ -287,14 +310,15 @@
             if (currentIndex > -1) {
                 currentIndex--;
             } else {
-                // This else block is handled by the transitionend event for seamless loop
+                // This logic is handled by the transitionend event for seamless loop
             }
             updateSlider();
         });
 
-        // Auto-slide (optional, uncomment to enable)
+        // Auto-slide 
         let autoSlideInterval;
         function startAutoSlide() {
+            stopAutoSlide(); // Clear any existing interval before starting a new one
             autoSlideInterval = setInterval(() => {
                 nextBtn.click();
             }, 5000); // Change slide every 5 seconds
