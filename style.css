@@ -324,6 +324,48 @@ section h2::after {
     flex-shrink: 0;
 }
 
+/* Publications Section */
+#publications .publications-list {
+    margin: 0 auto;
+    max-width: 800px; /* Constrain width for readability */
+    padding: 30px;
+    line-height: 1.8;
+}
+
+#publications .publications-list ul {
+    list-style: none; /* Remove default bullet points */
+    padding: 0;
+}
+
+#publications .publications-list li {
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 25px; /* Space for custom bullet */
+}
+
+#publications .publications-list li::before {
+    content: '📚'; /* Custom bullet icon */
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1.2em;
+    color: var(--accent-color);
+}
+
+#publications .publications-list a {
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+    border-bottom: 1px solid transparent; /* Underline effect */
+    padding-bottom: 2px;
+}
+
+#publications .publications-list a:hover {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+
 /* Testimonials Section Specific Outlook */
 #testimonials {
     background-color: var(--testimonial-section-bg); /* Use the new distinct background color */
@@ -694,6 +736,14 @@ footer .footer-links a:hover {
 
     .testimonial-slider-controls {
         margin-top: 20px; /* Less space on mobile */
+    }
+
+    /* Publications Section adjustments for mobile */
+    #publications .publications-list {
+        padding: 20px;
+    }
+    #publications .publications-list li {
+        font-size: 0.95em; /* Slightly smaller font for list items */
     }
 }
 

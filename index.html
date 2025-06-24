@@ -15,7 +15,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#practice-areas">Practice Areas</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#publications">Publications</a></li> <li><a href="#testimonials">Testimonials</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="menu-toggle">
@@ -108,6 +108,21 @@
             </div>
         </section>
 
+        <section id="publications">
+            <div class="container">
+                <h2>Publications & Research</h2>
+                <div class="publications-list glass-effect">
+                    <ul>
+                        <li><a href="https://www.ijlmh.com/wp-content/uploads/Live-Streaming-and-Broadcasting-Rights-under-Copyright.pdf" target="_blank">"Live Streaming and Broadcasting Rights Under Copyright"</a></li>
+                        <li><a href="https://www.ijllr.com/volume-iv-issue-vi-page-2" target="_blank">"The National Logistics Policy 2022: An Overview"</a></li>
+                        <li><a href="https://heinonline.org/hol-cgi-bin/get_pdf.cgi?handle=hein.journals/injlolw10&section=403" target="_blank">"What Current Threats Exist to the Privacy of Personal and Organizational Data?"</a></li>
+                        <li><a href="https://www.scribd.com/document/634542129/Untitled" target="_blank">"A Critical Examination of the Shift from Litigation to Alternative Dispute Resolution"</a></li>
+                        <li><a href="https://heinonline.org/hol-cgi-bin/get_pdf.cgi?handle=hein.journals/injlolw9&section=81" target="_blank">"Case Analysis: Sonadhar v. State of Chhattisgarh SLP (Crl) No. 529/2021"</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
         <section id="testimonials">
             <div class="container">
                 <h2>What Clients Say</h2>
@@ -153,7 +168,7 @@
                             <p class="testimonial-author">- Ms. Pooja Khanna</p>
                             <p class="testimonial-company">Business Owner</p>
                         </div>
-                        </div>
+                    </div>
                     <button class="slider-nav-btn prev-btn">&lt;</button>
                     <button class="slider-nav-btn next-btn">&gt;</button>
                 </div>
@@ -181,7 +196,6 @@
                         </ul>
                         <div class="social-links">
                             <a href="https://www.linkedin.com/in/vijay-attri-b07251154/" target="_blank" aria-label="LinkedIn"><img src="https://img.icons8.com/ios-filled/50/000000/linkedin.png" alt="LinkedIn" width="30" height="30" style="filter: invert(0) saturate(0) brightness(0) contrast(100%);"></a>
-                            
                             <a href="https://www.instagram.com/rashtraraksha_legal_solutions?igsh=OXprMmM2OWV1d244" target="_blank" aria-label="Instagram"><img src="https://img.icons8.com/ios-filled/50/000000/instagram-new.png" alt="Instagram" width="30" height="30" style="filter: invert(0) saturate(0) brightness(0) contrast(100%);"></a>
                             <a href="https://x.com/VijayAttri20?t=_6usZQSt41UhaKoydMcfUw&s=09" target="_blank" aria-label="X (Twitter)"><img src="https://img.icons8.com/ios-filled/50/000000/twitterx.png" alt="X (Twitter)" width="30" height="30" style="filter: invert(0) saturate(0) brightness(0) contrast(100%);"></a>
                             <a href="https://www.facebook.com/share/19MgA5aBTf/" target="_blank" aria-label="Facebook"><img src="https://img.icons8.com/ios-filled/50/000000/facebook-new.png" alt="Facebook" width="30" height="30" style="filter: invert(0) saturate(0) brightness(0) contrast(100%);"></a>
@@ -246,29 +260,22 @@
         const prevBtn = document.querySelector('.prev-btn');
         const nextBtn = document.querySelector('.next-btn');
         const testimonialSliderControls = document.querySelector('.testimonial-slider-controls');
-        // Re-select testimonialCards as the number might have changed
         const testimonialCards = document.querySelectorAll('#testimonials .testimonial-wrapper .testimonial-card'); 
         const totalCards = testimonialCards.length;
         let currentIndex = 0;
 
         // Clone first and last cards for seamless looping effect
-        // Only clone if there are cards to clone
         if (totalCards > 0) {
             const firstCardClone = testimonialCards[0].cloneNode(true);
             const lastCardClone = testimonialCards[totalCards - 1].cloneNode(true);
             testimonialWrapper.appendChild(firstCardClone);
             testimonialWrapper.insertBefore(lastCardClone, testimonialCards[0]);
-            // Update testimonialCards NodeList to include clones for correct width calculation
-            // const allTestimonialCards = document.querySelectorAll('#testimonials .testimonial-wrapper .testimonial-card');
+        }
 
-            // Set initial position to show the first real card
-            testimonialWrapper.style.transition = 'none';
-            // Use allTestimonialCards[0] for width calculation after clones are added
-            const initialCardWidth = testimonialCards[0].offsetWidth + 30; // Card width + margin-right from CSS
-            testimonialWrapper.style.transform = `translateX(-${(currentIndex + 1) * initialCardWidth}px)`;
-            setTimeout(() => {
-                testimonialWrapper.style.transition = 'transform 0.5s ease-in-out';
-            }, 0);
+        function getCardWidth() {
+            // Re-query to get actual elements including clones for correct width calculation
+            const allTestimonialCards = document.querySelectorAll('#testimonials .testimonial-wrapper .testimonial-card');
+            return allTestimonialCards.length > 0 ? allTestimonialCards[0].offsetWidth + 30 : 0; // Card width + margin-right from CSS
         }
 
         function createDots() {
@@ -279,19 +286,16 @@
                 dot.dataset.index = i;
                 dot.addEventListener('click', () => {
                     currentIndex = i;
-                    updateSlider(true); // Force smooth transition
-                    stopAutoSlide(); // Stop auto-slide on manual navigation
-                    startAutoSlide(); // Restart auto-slide after a delay
+                    updateSlider(true);
+                    stopAutoSlide();
+                    startAutoSlide();
                 });
                 testimonialSliderControls.appendChild(dot);
             }
         }
 
         function updateSlider(smoothTransition = true) {
-            // Recalculate card width in case of resize or initial load
-            const allTestimonialCards = document.querySelectorAll('#testimonials .testimonial-wrapper .testimonial-card');
-            const cardWidth = allTestimonialCards[0].offsetWidth + 30; // Card width + margin-right from CSS
-
+            const cardWidth = getCardWidth();
             if (!smoothTransition) {
                 testimonialWrapper.style.transition = 'none';
             } else {
@@ -310,49 +314,42 @@
         }
 
         testimonialWrapper.addEventListener('transitionend', () => {
-            // This is crucial for seamless looping
-            const allTestimonialCards = document.querySelectorAll('#testimonials .testimonial-wrapper .testimonial-card');
-            const cardWidth = allTestimonialCards[0].offsetWidth + 30;
-
-            if (currentIndex === totalCards) { // After last real card, jump to first real card (which is clone of 0)
+            const cardWidth = getCardWidth();
+            if (currentIndex === totalCards) {
                 testimonialWrapper.style.transition = 'none';
                 currentIndex = 0;
                 testimonialWrapper.style.transform = `translateX(-${(currentIndex + 1) * cardWidth}px)`;
-            } else if (currentIndex === -1) { // Before first real card, jump to last real card (which is clone of totalCards-1)
+            } else if (currentIndex === -1) {
                 testimonialWrapper.style.transition = 'none';
                 currentIndex = totalCards - 1;
                 testimonialWrapper.style.transform = `translateX(-${(currentIndex + 1) * cardWidth}px)`;
             }
-            // After adjustment, ensure next transition is smooth
             setTimeout(() => {
                 testimonialWrapper.style.transition = 'transform 0.5s ease-in-out';
             }, 0);
-
-            // Update dots after any loop jump
-            updateSlider(false); // Call with false to prevent transition on dot update
+            updateSlider(false); // Update dots without transition
         });
 
         nextBtn.addEventListener('click', () => {
             currentIndex++;
             updateSlider();
-            stopAutoSlide(); // Stop auto-slide on manual navigation
-            startAutoSlide(); // Restart auto-slide after a delay
+            stopAutoSlide();
+            startAutoSlide();
         });
 
         prevBtn.addEventListener('click', () => {
             currentIndex--;
             updateSlider();
-            stopAutoSlide(); // Stop auto-slide on manual navigation
-            startAutoSlide(); // Restart auto-slide after a delay
+            stopAutoSlide();
+            startAutoSlide();
         });
 
-        // Auto-slide 
         let autoSlideInterval;
         function startAutoSlide() {
-            stopAutoSlide(); // Clear any existing interval before starting a new one
+            stopAutoSlide();
             autoSlideInterval = setInterval(() => {
                 nextBtn.click();
-            }, 5000); // Change slide every 5 seconds
+            }, 5000);
         }
 
         function stopAutoSlide() {
@@ -361,7 +358,7 @@
 
         // Initialize slider on load
         createDots();
-        updateSlider(); // Initial update with the first card and dot active
+        updateSlider(false); // Initial update without transition
         startAutoSlide();
 
         // Pause auto-slide on hover
@@ -374,9 +371,8 @@
 
         // Update slider on window resize
         window.addEventListener('resize', () => {
-            // Reset transition and update position immediately
             testimonialWrapper.style.transition = 'none';
-            updateSlider();
+            updateSlider(false); // Update without transition on resize
             setTimeout(() => {
                 testimonialWrapper.style.transition = 'transform 0.5s ease-in-out';
             }, 0);
