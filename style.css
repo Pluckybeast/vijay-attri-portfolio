@@ -337,21 +337,22 @@ section h2::after {
     max-width: 800px;
     margin: 0 auto;
     overflow: hidden;
-    padding: 20px; /* Add padding to accommodate slider buttons visually */
+    /* Removed padding here as buttons are now inside, adjusted margin for cards */
 }
 
 .testimonial-wrapper {
     display: flex;
     transition: transform 0.5s ease-in-out;
+    margin-right: -30px; /* Counteract margin-right on cards for full width */
 }
 
 .testimonial-card {
-    flex: 0 0 100%;
+    flex: 0 0 calc(100% - 30px); /* 100% width minus margin-right */
     background-color: var(--card-bg);
     border-radius: 15px; /* Slightly more rounded corners */
     border: 2px solid var(--accent-color); /* More prominent border with accent color */
     padding: 35px; /* More padding inside cards */
-    margin: 0 15px; /* More space between cards in wrapper */
+    margin-right: 30px; /* Space between cards in wrapper */
     text-align: center;
     box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1); /* Stronger shadow */
     min-height: 220px; /* Ensure consistent height */
@@ -439,11 +440,41 @@ section h2::after {
 }
 
 .prev-btn {
-    left: -60px; /* Push buttons further out */
+    left: -20px; /* Position buttons inside/at edge of the slider container */
 }
 
 .next-btn {
-    right: -60px; /* Push buttons further out */
+    right: -20px; /* Position buttons inside/at edge of the slider container */
+}
+
+/* Testimonial Slider Controls (Dots) */
+.testimonial-slider-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px; /* Space below slider */
+    gap: 10px; /* Space between dots */
+}
+
+.dot-button {
+    width: 12px;
+    height: 12px;
+    background-color: var(--border-color); /* Inactive dot color */
+    border: 1px solid var(--accent-color);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    padding: 0; /* Remove default button padding */
+    flex-shrink: 0; /* Prevent dots from shrinking */
+}
+
+.dot-button.active {
+    background-color: var(--accent-color); /* Active dot color */
+    transform: scale(1.2); /* Slightly larger active dot */
+}
+
+.dot-button:hover:not(.active) {
+    background-color: rgba(153, 188, 133, 0.5); /* Lighter accent on hover for inactive dots */
+    transform: scale(1.1);
 }
 
 /* Contact Section */
@@ -645,19 +676,24 @@ footer .footer-links a:hover {
 
     .testimonial-slider {
         max-width: 100%; /* Use full width on smaller screens */
-        padding: 0; /* Remove side padding on small screens */
+        padding: 0 10px; /* Add some side padding for small screens to prevent buttons from touching edge */
     }
 
-    .prev-btn, .next-btn {
-        position: static;
-        transform: none;
-        margin: 10px auto; /* Center buttons below or above */
-        display: block;
+    .testimonial-card {
+        flex: 0 0 calc(100% - 20px); /* Adjust width for small screen padding */
+        margin-right: 20px;
     }
+
+    .prev-btn {
+        left: 0px; /* Position buttons at the very edge */
+    }
+
+    .next-btn {
+        right: 0px; /* Position buttons at the very edge */
+    }
+
     .testimonial-slider-controls {
-        display: flex;
-        justify-content: center;
-        margin-top: 20px;
+        margin-top: 20px; /* Less space on mobile */
     }
 }
 
