@@ -276,8 +276,12 @@ section h2::after {
 /* Content Showcase */
 .content-grid {
     display: grid;
+    /* This will create columns that are at least 280px wide, and as many as can fit */
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
+    /* Optional: Add alignment for better centering if columns don't perfectly fill space */
+    justify-content: center;
+    align-items: stretch; /* Ensure all cards stretch to the same height */
 }
 
 .content-card {
@@ -287,30 +291,38 @@ section h2::after {
     padding: 25px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* Lighter shadow */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    display: flex; /* Make it a flex container */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: flex-start; /* Align content to the top */
+    /* Ensure consistent height even if content length varies */
+    min-height: 250px; /* Adjust this value if cards are too short or too tall */
 }
 
 .content-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* More prominent hover shadow */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
 .content-card h3 {
     font-size: 1.6em;
     margin-bottom: 15px;
     color: var(--heading-color);
+    flex-shrink: 0; /* Prevent heading from shrinking */
 }
 
 .content-card p {
     font-size: 0.95em;
     line-height: 1.6;
     color: var(--text-color);
+    flex-grow: 1; /* Allow paragraph to grow and fill available space */
 }
 
 .content-card .icon {
     font-size: 3em;
     color: var(--accent-color);
     margin-bottom: 20px;
+    flex-shrink: 0; /* Prevent icon from shrinking */
 }
 
 /* Testimonials */
