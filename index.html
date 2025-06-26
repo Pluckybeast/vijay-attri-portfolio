@@ -14,37 +14,14 @@
         <nav class="navbar sticky">
             <div class="container nav-container">
                 <a href="#home" class="logo-container">
-                    <svg class="logo-svg" viewBox="0 0 80 60" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Background circle -->
-                        <circle cx="40" cy="30" r="25" fill="#fff7d1" stroke="#ffb0b0" stroke-width="2"/>
-                        
-                        <!-- Scales of Justice -->
-                        <!-- Central pillar -->
-                        <rect x="38" y="15" width="4" height="25" fill="#ffb0b0" rx="2"/>
-                        
-                        <!-- Horizontal bar -->
-                        <rect x="25" y="15" width="30" height="3" fill="#ffb0b0" rx="1.5"/>
-                        
-                        <!-- Left scale -->
-                        <ellipse cx="25" cy="20" rx="8" ry="2" fill="none" stroke="#ffb0b0" stroke-width="2"/>
-                        <line x1="25" y1="22" x2="40" y2="15" stroke="#ffb0b0" stroke-width="2" stroke-linecap="round"/>
-                        
-                        <!-- Right scale -->
-                        <ellipse cx="55" cy="20" rx="8" ry="2" fill="none" stroke="#ffb0b0" stroke-width="2"/>
-                        <line x1="55" y1="22" x2="40" y2="15" stroke="#ffb0b0" stroke-width="2" stroke-linecap="round"/>
-                        
-                        <!-- Gavel -->
-                        <rect x="35" y="35" width="10" height="3" fill="#ffd09b" rx="1.5"/>
-                        <rect x="37" y="38" width="6" height="8" fill="#ffd09b" rx="1"/>
-                        <rect x="38" y="46" width="4" height="6" fill="#ffb0b0" rx="1"/>
-                        
-                        <!-- Letter V for Vijay -->
-                        <path d="M30 25 L40 35 L50 25" stroke="#5d3a1f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                        
-                        <!-- Decorative elements -->
-                        <circle cx="40" cy="30" r="2" fill="#ffb0b0"/>
-                    </svg>
-                    <span class="logo">Vijay Attri Advocate</span>
+                    <div class="logo-symbol">
+                        <div class="scales-icon">⚖</div>
+                    </div>
+                    <div class="logo-text">
+                        <h1 class="company-name">VIJAY ATTRI</h1>
+                        <div class="decorative-line"></div>
+                        <p class="tagline">Associates</p>
+                    </div>
                 </a>
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
@@ -80,19 +57,19 @@
         <section class="stats-section alt-bg fade-in">
             <div class="container">
                 <div class="stats-grid">
-                    <div class="stat-card">
+                    <div class="stat-card interactive-element">
                         <span class="stat-number" data-target="3">0</span><span class="stat-unit">+</span>
                         <p>Years of Experience</p>
                     </div>
-                    <div class="stat-card">
+                    <div class="stat-card interactive-element">
                         <span class="stat-number" data-target="200">0</span><span class="stat-unit">+</span>
                         <p>Cases Handled</p>
                     </div>
-                    <div class="stat-card">
+                    <div class="stat-card interactive-element">
                         <span class="stat-number" data-target="90">0</span><span class="stat-unit">%</span>
                         <p>Success Rate</p>
                     </div>
-                    <div class="stat-card">
+                    <div class="stat-card interactive-element">
                         <span class="stat-number" data-target="2">0</span><span class="stat-unit"> Cr+</span>
                         <p>Settlement Amounts</p>
                     </div>
@@ -103,12 +80,12 @@
         <!-- ABOUT SECTION -->
         <section id="about" class="about-section fade-in">
             <div class="container">
-                <div class="section-header">
+                <div class="section-header interactive-element">
                     <h2>About Vijay Attri</h2>
                 </div>
                 <div class="about-flex">
                     <img class="section-photo" src="legal2.jpg" alt="About Legal">
-                    <div class="about-card">
+                    <div class="about-card interactive-element">
                         <p>Vijay Attri is a seasoned legal professional with a Bachelor of Arts and Bachelor of Legislative Law (B.A LL.B Hon's) degree from GLA University, Mathura. Admitted to practice across All India, he brings a robust 3 years of experience in navigating complex legal landscapes.</p>
                         <p>Specializing in a diverse range of legal fields, Vijay Attri is committed to delivering exceptional legal services. His practice areas encompass Corporate Law, Civil Litigation, Intellectual Property, Real Estate, Family Law, and Criminal Defense, ensuring comprehensive support for his clients.</p>
                         <p>A member of the Delhi High Court, Vijay Attri is known for his analytical acumen, strategic thinking, and dedication to achieving favorable outcomes. He believes in a client-centric approach, prioritizing clear communication and personalized legal solutions.</p>
@@ -120,12 +97,12 @@
         <!-- PRACTICE AREAS SECTION -->
         <section id="practice-areas" class="practice-section alt-bg fade-in">
             <div class="container">
-                <div class="section-header">
+                <div class="section-header interactive-element">
                     <h2>My Practice Areas</h2>
                 </div>
                 <img class="section-photo" src="legal3.jpg" alt="Practice Areas Legal">
                 <div class="practice-grid">
-                    <div class="practice-card" onclick="openPracticeDetails('criminal')">
+                    <div class="practice-card interactive-element" onclick="openPracticeDetails('criminal')">
                         <i class="fas fa-gavel practice-icon"></i>
                         <h3>Criminal Defense</h3>
                         <p>Vigorous defense for individuals facing criminal charges, ensuring protection of rights and fair legal process.</p>
@@ -133,7 +110,7 @@
                             <span class="click-hint">Click for details <i class="fas fa-arrow-right"></i></span>
                         </div>
                     </div>
-                    <div class="practice-card" onclick="openPracticeDetails('corporate')">
+                    <div class="practice-card interactive-element" onclick="openPracticeDetails('corporate')">
                         <i class="fas fa-building practice-icon"></i>
                         <h3>Corporate Law</h3>
                         <p>Expert legal guidance for businesses on compliance, contracts, mergers, acquisitions, and corporate governance.</p>
@@ -141,7 +118,7 @@
                             <span class="click-hint">Click for details <i class="fas fa-arrow-right"></i></span>
                         </div>
                     </div>
-                    <div class="practice-card" onclick="openPracticeDetails('civil')">
+                    <div class="practice-card interactive-element" onclick="openPracticeDetails('civil')">
                         <i class="fas fa-balance-scale practice-icon"></i>
                         <h3>Civil Litigation</h3>
                         <p>Aggressive representation in civil disputes, property matters, contract breaches, and debt recovery.</p>
@@ -149,7 +126,7 @@
                             <span class="click-hint">Click for details <i class="fas fa-arrow-right"></i></span>
                         </div>
                     </div>
-                    <div class="practice-card" onclick="openPracticeDetails('ip')">
+                    <div class="practice-card interactive-element" onclick="openPracticeDetails('ip')">
                         <i class="fas fa-lightbulb practice-icon"></i>
                         <h3>Intellectual Property</h3>
                         <p>Protecting your innovations, trademarks, copyrights, and other intellectual assets through strategic legal measures.</p>
@@ -157,7 +134,7 @@
                             <span class="click-hint">Click for details <i class="fas fa-arrow-right"></i></span>
                         </div>
                     </div>
-                    <div class="practice-card" onclick="openPracticeDetails('real-estate')">
+                    <div class="practice-card interactive-element" onclick="openPracticeDetails('real-estate')">
                         <i class="fas fa-home practice-icon"></i>
                         <h3>Real Estate Law</h3>
                         <p>Comprehensive legal support for property transactions, disputes, land development, and regulatory compliance.</p>
@@ -165,7 +142,7 @@
                             <span class="click-hint">Click for details <i class="fas fa-arrow-right"></i></span>
                         </div>
                     </div>
-                    <div class="practice-card" onclick="openPracticeDetails('family')">
+                    <div class="practice-card interactive-element" onclick="openPracticeDetails('family')">
                         <i class="fas fa-heart practice-icon"></i>
                         <h3>Family Law</h3>
                         <p>Sensitive and effective representation in divorce, child custody, alimony, and other family-related legal matters.</p>
@@ -181,28 +158,28 @@
         <section id="publications" class="publications-section fade-in">
             <div class="container">
                 <img class="section-photo" src="legal4.jpg" alt="Legal Publications" style="margin-bottom: 24px; max-width: 220px; float: right;">
-                <div class="section-header">
+                <div class="section-header interactive-element">
                     <h2>Publications & Research</h2>
                 </div>
                 <div class="publications-list">
                     <ul>
-                        <li onclick="openPublicationPreview('streaming')">
+                        <li class="interactive-element" onclick="openPublicationPreview('streaming')">
                             <a href="https://www.ijlmh.com/wp-content/uploads/Live-Streaming-and-Broadcasting-Rights-under-Copyright.pdf" target="_blank">"Live Streaming and Broadcasting Rights Under Copyright"</a>
                             <span class="preview-hint">Click to preview</span>
                         </li>
-                        <li onclick="openPublicationPreview('logistics')">
+                        <li class="interactive-element" onclick="openPublicationPreview('logistics')">
                             <a href="https://www.ijllr.com/volume-iv-issue-vi-page-2" target="_blank">"The National Logistics Policy 2022: An Overview"</a>
                             <span class="preview-hint">Click to preview</span>
                         </li>
-                        <li onclick="openPublicationPreview('privacy')">
+                        <li class="interactive-element" onclick="openPublicationPreview('privacy')">
                             <a href="https://heinonline.org/hol-cgi-bin/get_pdf.cgi?handle=hein.journals/injlolw10&section=403" target="_blank">"What Current Threats Exist to the Privacy of Personal and Organizational Data?"</a>
                             <span class="preview-hint">Click to preview</span>
                         </li>
-                        <li onclick="openPublicationPreview('adr')">
+                        <li class="interactive-element" onclick="openPublicationPreview('adr')">
                             <a href="https://www.scribd.com/document/634542129/Untitled" target="_blank">"A Critical Examination of the Shift from Litigation to Alternative Dispute Resolution"</a>
                             <span class="preview-hint">Click to preview</span>
                         </li>
-                        <li onclick="openPublicationPreview('sonadhar')">
+                        <li class="interactive-element" onclick="openPublicationPreview('sonadhar')">
                             <a href="https://heinonline.org/hol-cgi-bin/get_pdf.cgi?handle=hein.journals/injlolw9&section=81" target="_blank">"Case Analysis: Sonadhar v. State of Chhattisgarh SLP (Crl) No. 529/2021"</a>
                             <span class="preview-hint">Click to preview</span>
                         </li>
@@ -214,11 +191,11 @@
         <!-- TESTIMONIALS SECTION -->
         <section id="testimonials" class="testimonials-section alt-bg fade-in">
             <div class="container">
-                <div class="section-header">
+                <div class="section-header interactive-element">
                     <h2>What Clients Say</h2>
                 </div>
                 <div class="testimonials-grid">
-                    <div class="testimonial-card-modern">
+                    <div class="testimonial-card-modern interactive-element">
                         <div class="testimonial-avatar"><i class="fas fa-user-tie"></i></div>
                         <p class="testimonial-quote">Vijay Attri's expertise in corporate law is unmatched. He navigated our complex merger with such precision, ensuring a seamless and favorable outcome. Truly a brilliant advocate!</p>
                         <div class="testimonial-meta">
@@ -226,7 +203,7 @@
                             <span class="testimonial-company">Director, Indus Innovations</span>
                         </div>
                     </div>
-                    <div class="testimonial-card-modern">
+                    <div class="testimonial-card-modern interactive-element">
                         <div class="testimonial-avatar"><i class="fas fa-user"></i></div>
                         <p class="testimonial-quote">For my property dispute, Mr. Attri provided clear, strategic advice and relentless representation. His dedication secured a swift and just resolution. Highly professional and effective.</p>
                         <div class="testimonial-meta">
@@ -234,7 +211,7 @@
                             <span class="testimonial-company">Real Estate Developer</span>
                         </div>
                     </div>
-                    <div class="testimonial-card-modern">
+                    <div class="testimonial-card-modern interactive-element">
                         <div class="testimonial-avatar"><i class="fas fa-user-graduate"></i></div>
                         <p class="testimonial-quote">Facing a legal challenge for my intellectual property felt daunting until I consulted Vijay Attri. He protected my innovations diligently and achieved the desired result. Exceptional service!</p>
                         <div class="testimonial-meta">
@@ -242,7 +219,7 @@
                             <span class="testimonial-company">Tech Entrepreneur</span>
                         </div>
                     </div>
-                    <div class="testimonial-card-modern">
+                    <div class="testimonial-card-modern interactive-element">
                         <div class="testimonial-avatar"><i class="fas fa-user-friends"></i></div>
                         <p class="testimonial-quote">Vijay Attri handled my family matter with immense empathy and profound legal knowledge. He made a difficult time much easier and fought for my rights effectively. Forever grateful.</p>
                         <div class="testimonial-meta">
@@ -257,11 +234,11 @@
         <!-- CONTACT SECTION -->
         <section id="contact" class="contact-section fade-in">
             <div class="container">
-                <div class="section-header">
+                <div class="section-header interactive-element">
                     <h2>Get in Touch</h2>
                 </div>
                 <div class="contact-flex">
-                    <div class="contact-info-card">
+                    <div class="contact-info-card interactive-element">
                         <h3>Contact Information</h3>
                         <ul>
                             <li><strong><i class="fas fa-phone"></i> Phone:</strong> 9873980819</li>
@@ -275,17 +252,17 @@
                             </li>
                         </ul>
                         <div class="social-links">
-                            <a href="https://www.linkedin.com/in/vijay-attri-b07251154/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                            <a href="https://www.instagram.com/rashtraraksha_legal_solutions?igsh=OXprMmM2OWV1d244" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                            <a href="https://x.com/VijayAttri20?t=_6usZQSt41UhaKoydMcfUw&s=09" target="_blank" aria-label="X (Twitter)"><i class="fab fa-twitter"></i></a>
-                            <a href="https://www.facebook.com/share/19MgA5aBTf/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                            <a href="https://whatsapp.com/channel/0029VaBhU4hFXUuRTmtcz83Z" target="_blank" aria-label="WhatsApp Channel"><i class="fab fa-whatsapp"></i></a>
+                            <a href="https://www.linkedin.com/in/vijay-attri-b07251154/" target="_blank" aria-label="LinkedIn" class="interactive-element"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://www.instagram.com/rashtraraksha_legal_solutions?igsh=OXprMmM2OWV1d244" target="_blank" aria-label="Instagram" class="interactive-element"><i class="fab fa-instagram"></i></a>
+                            <a href="https://x.com/VijayAttri20?t=_6usZQSt41UhaKoydMcfUw&s=09" target="_blank" aria-label="X (Twitter)" class="interactive-element"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.facebook.com/share/19MgA5aBTf/" target="_blank" aria-label="Facebook" class="interactive-element"><i class="fab fa-facebook"></i></a>
+                            <a href="https://whatsapp.com/channel/0029VaBhU4hFXUuRTmtcz83Z" target="_blank" aria-label="WhatsApp Channel" class="interactive-element"><i class="fab fa-whatsapp"></i></a>
                         </div>
-                        <div class="map-embed" style="margin-top:24px;">
+                        <div class="map-embed interactive-element" style="margin-top:24px;">
                             <iframe src="https://www.google.com/maps?q=Chamber+No.+07+Patiala+House+Court,+New+Delhi-+110001&output=embed" width="100%" height="220" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
-                    <div class="contact-form-card feedback-form-modern">
+                    <div class="contact-form-card feedback-form-modern interactive-element">
                         <h3>Send a Message</h3>
                         <form name="contact" method="POST" data-netlify="true" class="enhanced-form">
                             <div class="form-group">
@@ -345,7 +322,7 @@
                                     Subscribe to legal updates and newsletter (optional)
                                 </label>
                             </div>
-                            <button type="submit" class="btn btn-primary enhanced-submit">
+                            <button type="submit" class="btn btn-primary enhanced-submit interactive-element">
                                 <i class="fas fa-paper-plane"></i> Send Message
                                 <span class="submit-text">Send Message</span>
                             </button>
@@ -509,6 +486,30 @@
                         submitBtn.style.background = '';
                     }, 3000);
                 }, 2000);
+            });
+        }
+
+        // Enhanced logo interaction effects
+        const logoContainer = document.querySelector('.logo-container');
+        const logoSymbol = document.querySelector('.logo-symbol');
+        
+        if (logoContainer && logoSymbol) {
+            logoContainer.addEventListener('mousemove', (e) => {
+                const rect = logoContainer.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const deltaX = (x - centerX) / centerX;
+                const deltaY = (y - centerY) / centerY;
+                
+                logoSymbol.style.transform = `translate(${deltaX * 4}px, ${deltaY * 4}px) scale(1.05)`;
+            });
+            
+            logoContainer.addEventListener('mouseleave', () => {
+                logoSymbol.style.transform = 'translate(0, 0) scale(1)';
             });
         }
 
@@ -894,6 +895,72 @@
             closePracticeDetails();
             closePublicationPreview();
         }
+    });
+
+    // Enhanced cursor-following effects for all interactive elements
+    function addInteractiveEffects() {
+        const interactiveElements = document.querySelectorAll('.interactive-element');
+        
+        interactiveElements.forEach(element => {
+            element.addEventListener('mousemove', (e) => {
+                const rect = element.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const deltaX = (x - centerX) / centerX;
+                const deltaY = (y - centerY) / centerY;
+                
+                // Apply different effects based on element type
+                if (element.classList.contains('practice-card')) {
+                    element.style.transform = `translateY(-8px) scale(1.02) translate(${deltaX * 3}px, ${deltaY * 3}px)`;
+                } else if (element.classList.contains('testimonial-card-modern')) {
+                    element.style.transform = `translateY(-5px) translate(${deltaX * 2}px, ${deltaY * 2}px)`;
+                } else if (element.classList.contains('stat-card')) {
+                    element.style.transform = `translateY(-3px) scale(1.05) translate(${deltaX * 2}px, ${deltaY * 2}px)`;
+                } else if (element.classList.contains('contact-info-card') || element.classList.contains('contact-form-card')) {
+                    element.style.transform = `translateY(-3px) translate(${deltaX * 2}px, ${deltaY * 2}px)`;
+                } else if (element.classList.contains('social-links')) {
+                    element.style.transform = `translateY(-3px) scale(1.1) translate(${deltaX * 2}px, ${deltaY * 2}px)`;
+                } else if (element.classList.contains('btn')) {
+                    element.style.transform = `translateY(-2px) translate(${deltaX * 1}px, ${deltaY * 1}px)`;
+                } else if (element.classList.contains('publications-list')) {
+                    element.style.transform = `translateX(5px) translate(${deltaX * 2}px, ${deltaY * 1}px)`;
+                } else if (element.classList.contains('section-header')) {
+                    const h2 = element.querySelector('h2');
+                    if (h2) {
+                        h2.style.transform = `translateY(-2px) translate(${deltaX * 1}px, ${deltaY * 1}px)`;
+                    }
+                } else if (element.classList.contains('map-embed')) {
+                    element.style.transform = `scale(1.02) translate(${deltaX * 1}px, ${deltaY * 1}px)`;
+                } else {
+                    element.style.transform = `translateY(-2px) translate(${deltaX * 2}px, ${deltaY * 2}px)`;
+                }
+            });
+            
+            element.addEventListener('mouseleave', () => {
+                element.style.transform = '';
+                const h2 = element.querySelector('h2');
+                if (h2) {
+                    h2.style.transform = '';
+                }
+            });
+        });
+    }
+
+    // Initialize interactive effects
+    addInteractiveEffects();
+
+    // Re-initialize effects after dynamic content loads
+    const observer = new MutationObserver(() => {
+        addInteractiveEffects();
+    });
+
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true
     });
     </script>
 </body>
