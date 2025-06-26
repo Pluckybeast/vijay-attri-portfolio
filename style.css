@@ -1,18 +1,18 @@
 :root {
-    --primary-bg: #fff2eb; /* Cream - Main background */
-    --secondary-bg: #ffdcdc; /* Light Pink - Background for cards, sections */
-    --text-color: #4a4a4a; /* Dark Gray - For general text */
-    --heading-color: #8b4513; /* Saddle Brown - For headings */
-    --accent-color: #ffd6ba; /* Coral - For buttons, links, highlights */
-    --border-color: #ffe8cd; /* Peach - For subtle borders, lines */
+    --primary-bg: #e3fdfd; /* Light Mint - Main background */
+    --secondary-bg: #cbf1f5; /* Soft Teal - Background for cards, sections */
+    --text-color: #2c5f5f; /* Dark Teal - For general text */
+    --heading-color: #1a4a4a; /* Darker Teal - For headings */
+    --accent-color: #71c9ce; /* Teal Blue - For buttons, links, highlights */
+    --border-color: #a6e3e9; /* Mint Green - For subtle borders, lines */
     --card-bg: #ffffff; /* White - Card backgrounds */
-    --nav-link-hover: rgba(255, 214, 186, 0.3);
-    --gradient-start: #fff2eb;
-    --gradient-end: #ffdcdc;
-    --testimonial-section-bg: #ffdcdc;
-    --highlight-color: #ffd6ba; /* Coral for highlights */
-    --text-light: #4a4a4a; /* Dark text for light backgrounds */
-    --text-dark: #2c2c2c; /* Darker text for emphasis */
+    --nav-link-hover: rgba(113, 201, 206, 0.2);
+    --gradient-start: #e3fdfd;
+    --gradient-end: #cbf1f5;
+    --testimonial-section-bg: #cbf1f5;
+    --highlight-color: #71c9ce; /* Teal Blue for highlights */
+    --text-light: #2c5f5f; /* Dark Teal text for light backgrounds */
+    --text-dark: #1a4a4a; /* Darker text for emphasis */
 }
 
 body {
@@ -86,7 +86,7 @@ a {
     width: 100%;
     z-index: 1000;
     padding: 15px 0;
-    background: rgba(255, 242, 235, 0.95); /* Cream with transparency */
+    background: rgba(227, 253, 253, 0.95); /* Light Mint with transparency */
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -347,7 +347,7 @@ a {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 214, 186, 0.1), transparent);
+    background: linear-gradient(90deg, transparent, rgba(113, 201, 206, 0.1), transparent);
     transition: left 0.5s ease;
 }
 .practice-card:hover::before {
@@ -355,7 +355,7 @@ a {
 }
 .practice-card:hover {
     transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 15px 40px rgba(255, 214, 186, 0.3);
+    box-shadow: 0 15px 40px rgba(113, 201, 206, 0.3);
     border-color: var(--heading-color);
 }
 .practice-card h3 {
@@ -627,7 +627,7 @@ section h2::after {
 .feedback-form-modern input:focus,
 .feedback-form-modern textarea:focus {
     border-color: var(--accent-color);
-    box-shadow: 0 0 0 2px rgba(255, 214, 186, 0.2);
+    box-shadow: 0 0 0 3px rgba(113, 201, 206, 0.2);
     outline: none;
     transform: translateY(-2px);
 }
@@ -710,7 +710,7 @@ section h2::after {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 242, 235, 0.95);
+    background: rgba(227, 253, 253, 0.95);
     z-index: 2000;
     overflow-y: auto;
 }
@@ -775,7 +775,7 @@ section h2::after {
     color: var(--text-color);
     margin-bottom: 25px;
     padding: 15px;
-    background: rgba(255, 214, 186, 0.1);
+    background: rgba(113, 201, 206, 0.1);
     border-radius: 8px;
     border-left: 4px solid var(--accent-color);
 }
@@ -783,7 +783,7 @@ section h2::after {
     text-align: center;
     margin-top: 30px;
     padding: 20px;
-    background: rgba(255, 214, 186, 0.1);
+    background: rgba(113, 201, 206, 0.1);
     border-radius: 12px;
     border: 2px solid var(--accent-color);
 }
@@ -856,7 +856,7 @@ section h2::after {
     font-style: italic;
     margin-bottom: 20px;
     padding: 10px;
-    background: rgba(255, 214, 186, 0.1);
+    background: rgba(113, 201, 206, 0.1);
     border-radius: 6px;
 }
 .publication-cta {
@@ -1248,7 +1248,7 @@ section h2::after {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(197,157,95,0.1), transparent);
+    background: linear-gradient(90deg, transparent, rgba(113, 201, 206, 0.1), transparent);
     transition: left 0.5s ease;
 }
 .practice-card:hover::before {
@@ -1256,7 +1256,8 @@ section h2::after {
 }
 .practice-card:hover {
     transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 15px 40px rgba(197,157,95,0.15);
+    box-shadow: 0 15px 40px rgba(113, 201, 206, 0.3);
+    border-color: var(--heading-color);
 }
 
 .stat-card {
@@ -1661,7 +1662,7 @@ section h2::after {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 242, 235, 0.95);
+    background: rgba(227, 253, 253, 0.95);
     z-index: 2000;
     overflow-y: auto;
 }
@@ -1726,7 +1727,7 @@ section h2::after {
     color: var(--text-color);
     margin-bottom: 25px;
     padding: 15px;
-    background: rgba(255, 214, 186, 0.1);
+    background: rgba(113, 201, 206, 0.1);
     border-radius: 8px;
     border-left: 4px solid var(--accent-color);
 }
@@ -1734,7 +1735,7 @@ section h2::after {
     text-align: center;
     margin-top: 30px;
     padding: 20px;
-    background: rgba(255, 214, 186, 0.1);
+    background: rgba(113, 201, 206, 0.1);
     border-radius: 12px;
     border: 2px solid var(--accent-color);
 }
@@ -1807,7 +1808,7 @@ section h2::after {
     font-style: italic;
     margin-bottom: 20px;
     padding: 10px;
-    background: rgba(255, 214, 186, 0.1);
+    background: rgba(113, 201, 206, 0.1);
     border-radius: 6px;
 }
 .publication-cta {
@@ -1823,7 +1824,7 @@ section h2::after {
 .practice-card-footer {
     margin-top: 20px;
     padding-top: 15px;
-    border-top: 1px solid rgba(255, 214, 186, 0.3);
+    border-top: 1px solid rgba(113, 201, 206, 0.3);
 }
 .click-hint {
     color: var(--accent-color);
@@ -1891,13 +1892,13 @@ section h2::after {
 .enhanced-form textarea:focus,
 .enhanced-form select:focus {
     border-color: var(--accent-color);
-    box-shadow: 0 0 0 3px rgba(255, 214, 186, 0.2);
+    box-shadow: 0 0 0 3px rgba(113, 201, 206, 0.2);
     outline: none;
     transform: translateY(-2px);
 }
 .enhanced-form input::placeholder,
 .enhanced-form textarea::placeholder {
-    color: rgba(74, 74, 74, 0.6);
+    color: rgba(44, 95, 95, 0.6);
 }
 .enhanced-form textarea {
     min-height: 120px;
