@@ -966,3 +966,501 @@ footer .footer-links a:hover {
         background-position: 60% center;
     }
 }
+
+/* --- Fade In Animations --- */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Professional Practice Icons --- */
+.practice-icon {
+    font-size: 2.5em;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+.practice-card:hover .practice-icon {
+    transform: scale(1.1) rotate(5deg);
+    color: var(--heading-color);
+}
+
+/* --- Floating Back to Top Button --- */
+.back-to-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2em;
+    box-shadow: 0 4px 20px rgba(197,157,95,0.3);
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    z-index: 1000;
+}
+.back-to-top-btn.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.back-to-top-btn:hover {
+    background: var(--heading-color);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(197,157,95,0.4);
+}
+
+/* --- Floating WhatsApp Button --- */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    width: 60px;
+    height: 60px;
+    background: #25d366;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 1.8em;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.3);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+.whatsapp-float:hover {
+    background: #128c7e;
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(37,211,102,0.4);
+}
+
+/* --- Enhanced Hover Effects --- */
+.practice-card {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+.practice-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(197,157,95,0.1), transparent);
+    transition: left 0.5s ease;
+}
+.practice-card:hover::before {
+    left: 100%;
+}
+.practice-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(197,157,95,0.15);
+}
+
+.stat-card {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+.stat-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: var(--accent-color);
+    transition: width 0.3s ease;
+}
+.stat-card:hover::after {
+    width: 100%;
+}
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(197,157,95,0.15);
+}
+
+/* --- Enhanced Social Links --- */
+.social-links a {
+    width: 45px;
+    height: 45px;
+    background: var(--accent-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3em;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+.social-links a:hover {
+    background: var(--heading-color);
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 5px 15px rgba(197,157,95,0.3);
+}
+
+/* --- Enhanced Form Styling --- */
+.feedback-form-modern label i {
+    margin-right: 8px;
+    color: var(--accent-color);
+}
+.feedback-form-modern button i {
+    margin-right: 8px;
+}
+
+/* --- Enhanced Contact Info --- */
+.contact-info-card ul li i {
+    margin-right: 8px;
+    color: var(--accent-color);
+    width: 16px;
+}
+
+/* --- Enhanced Testimonial Avatars --- */
+.testimonial-avatar i {
+    font-size: 1.5em;
+}
+
+/* --- Responsive Design for Floating Buttons --- */
+@media (max-width: 768px) {
+    .back-to-top-btn {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 1em;
+    }
+    .whatsapp-float {
+        bottom: 20px;
+        left: 20px;
+        width: 55px;
+        height: 55px;
+        font-size: 1.6em;
+    }
+}
+
+/* --- Enhanced Section Headers --- */
+.section-header h2::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    opacity: 0.1;
+    z-index: -1;
+}
+
+/* --- Enhanced Button Styling --- */
+.btn-primary {
+    position: relative;
+    overflow: hidden;
+}
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+}
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+/* --- Enhanced Card Shadows --- */
+.about-card, .contact-info-card, .contact-form-card, .publications-list {
+    box-shadow: 0 8px 32px rgba(13,24,54,0.08);
+    transition: box-shadow 0.3s ease;
+}
+.about-card:hover, .contact-info-card:hover, .contact-form-card:hover, .publications-list:hover {
+    box-shadow: 0 12px 40px rgba(13,24,54,0.12);
+}
+
+/* --- Enhanced Navigation --- */
+.nav-links a {
+    position: relative;
+    overflow: hidden;
+}
+.nav-links a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--accent-color);
+    opacity: 0.1;
+    transition: left 0.3s ease;
+}
+.nav-links a:hover::before {
+    left: 0;
+}
+
+/* --- Enhanced Logo --- */
+.logo {
+    position: relative;
+    overflow: hidden;
+}
+.logo::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: width 0.3s ease;
+}
+.logo:hover::after {
+    width: 100%;
+}
+
+/* --- Enhanced Map Embed --- */
+.map-embed iframe {
+    transition: box-shadow 0.3s ease;
+}
+.map-embed iframe:hover {
+    box-shadow: 0 8px 25px rgba(13,24,54,0.15);
+}
+
+/* --- Enhanced Publications List --- */
+.publications-list li {
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin-bottom: 12px;
+}
+.publications-list li:hover {
+    background: rgba(197,157,95,0.05);
+    transform: translateX(5px);
+}
+.publications-list li::before {
+    transition: transform 0.3s ease;
+}
+.publications-list li:hover::before {
+    transform: scale(1.2);
+}
+
+/* --- Enhanced Testimonial Cards --- */
+.testimonial-card-modern {
+    position: relative;
+    overflow: hidden;
+}
+.testimonial-card-modern::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 30px 30px 0;
+    border-color: transparent var(--accent-color) transparent transparent;
+    opacity: 0.1;
+    transition: all 0.3s ease;
+}
+.testimonial-card-modern:hover::after {
+    opacity: 0.3;
+    transform: scale(1.1);
+}
+
+/* --- Enhanced Hero Section --- */
+.hero-text h1 {
+    position: relative;
+}
+.hero-text h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: var(--accent-color);
+    transition: width 0.8s ease;
+}
+.fade-in.visible .hero-text h1::after {
+    width: 100%;
+}
+
+/* --- Enhanced Stats Animation --- */
+.stat-number {
+    position: relative;
+}
+.stat-number::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: width 0.5s ease;
+}
+.stat-card:hover .stat-number::after {
+    width: 100%;
+}
+
+/* --- Enhanced Footer --- */
+.footer-links a {
+    position: relative;
+    overflow: hidden;
+}
+.footer-links a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -100%;
+    width: 100%;
+    height: 1px;
+    background: var(--accent-color);
+    transition: left 0.3s ease;
+}
+.footer-links a:hover::before {
+    left: 0;
+}
+
+/* --- Enhanced Form Inputs --- */
+.feedback-form-modern input:focus,
+.feedback-form-modern textarea:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(197,157,95,0.15);
+}
+
+/* --- Enhanced Section Photos --- */
+.section-photo {
+    transition: all 0.4s ease;
+    position: relative;
+}
+.section-photo::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(197,157,95,0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.section-photo:hover::after {
+    opacity: 1;
+}
+.section-photo:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 40px rgba(13,24,54,0.15);
+}
+
+/* --- Enhanced Menu Toggle --- */
+.menu-toggle span {
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+    transform: scale(0);
+}
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* --- Enhanced Container --- */
+.container {
+    position: relative;
+}
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--accent-color);
+    opacity: 0.3;
+    border-radius: 2px;
+}
+
+/* --- Enhanced Alt Background --- */
+.alt-bg {
+    position: relative;
+}
+.alt-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(197,157,95,0.02) 0%, rgba(13,24,54,0.02) 100%);
+    pointer-events: none;
+}
+
+/* --- Enhanced Responsive Design --- */
+@media (max-width: 480px) {
+    .practice-icon {
+        font-size: 2em;
+    }
+    .back-to-top-btn, .whatsapp-float {
+        width: 40px;
+        height: 40px;
+        font-size: 1em;
+    }
+    .social-links a {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1em;
+    }
+}
+
+/* --- Enhanced Loading States --- */
+.btn-primary:active {
+    transform: scale(0.95);
+}
+.feedback-form-modern input:active,
+.feedback-form-modern textarea:active {
+    transform: scale(0.98);
+}
+
+/* --- Enhanced Accessibility --- */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* --- Enhanced Print Styles --- */
+@media print {
+    .back-to-top-btn,
+    .whatsapp-float,
+    .social-links {
+        display: none !important;
+    }
+    .fade-in {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
