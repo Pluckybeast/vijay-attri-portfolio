@@ -1,17 +1,18 @@
 :root {
-    /* New Color Palette: https://colorhunt.co/palette/faf1e6fdfaf6e4efe799bc85 */
-    --primary-bg: #f7f8fa; /* Soft light gray */
-    --secondary-bg: #ffffff; /* White for cards */
-    --text-color: #1a2233; /* Deep blue for text */
-    --heading-color: #0d1836; /* Even deeper blue for headings */
-    --accent-color: #c59d5f; /* Gold accent */
-    --border-color: #e0e4ea; /* Light border */
-    --card-bg: #ffffff;
-    --nav-link-hover: rgba(197, 157, 95, 0.15);
-    --gradient-start: #f7f8fa;
-    --gradient-end: #e0e4ea;
-    /* New variable for testimonial section specific background */
-    --testimonial-section-bg: #f2f4f8;
+    --primary-bg: #4a102a; /* Dark Maroon - Main background */
+    --secondary-bg: #85193c; /* Rich Red - Background for cards, sections */
+    --text-color: #ffffff; /* White - For general text */
+    --heading-color: #fcf259; /* Bright Yellow - For headings */
+    --accent-color: #c5172e; /* Vibrant Orange - For buttons, links, highlights */
+    --border-color: #85193c; /* Rich Red - For subtle borders, lines */
+    --card-bg: #4a102a; /* Dark Maroon - Card backgrounds */
+    --nav-link-hover: rgba(197, 23, 46, 0.2);
+    --gradient-start: #4a102a;
+    --gradient-end: #85193c;
+    --testimonial-section-bg: #85193c;
+    --highlight-color: #fcf259; /* Bright Yellow for highlights */
+    --text-light: #ffffff; /* White text */
+    --text-dark: #4a102a; /* Dark text for light backgrounds */
 }
 
 body {
@@ -19,7 +20,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: var(--text-color);
+    color: var(--text-light);
     background-color: var(--primary-bg);
     overflow-x: hidden;
     position: relative;
@@ -120,7 +121,7 @@ a {
 }
 
 .nav-links a {
-    color: var(--text-color);
+    color: var(--text-light);
     font-weight: 500;
     padding: 8px 0;
     position: relative;
@@ -156,7 +157,7 @@ a {
 .menu-toggle span {
     height: 3px;
     width: 25px;
-    background-color: var(--text-color);
+    background-color: var(--text-light);
     margin-bottom: 4px;
     border-radius: 5px;
     transition: all 0.3s;
@@ -199,7 +200,7 @@ a {
 .hero-content p {
     font-size: 1.3em;
     margin-bottom: 30px;
-    color: var(--text-color);
+    color: var(--text-light);
 }
 
 .btn {
@@ -287,7 +288,7 @@ section h2::after {
 
 .stat-item p {
     font-size: 1em;
-    color: var(--text-color);
+    color: var(--text-light);
     margin: 0;
 }
 
@@ -346,7 +347,7 @@ section h2::after {
 .content-card p {
     font-size: 0.95em;
     line-height: 1.6;
-    color: var(--text-color);
+    color: var(--text-light);
     flex-grow: 1;
 }
 
@@ -386,7 +387,7 @@ section h2::after {
 }
 
 #publications .publications-list a {
-    color: var(--text-color);
+    color: var(--text-light);
     font-weight: 500;
     transition: color 0.3s ease;
     border-bottom: 1px solid transparent; /* Underline effect */
@@ -455,7 +456,7 @@ section h2::after {
     font-size: 1.25em; /* Slightly larger quote */
     font-style: italic;
     margin-bottom: 25px; /* More space below quote */
-    color: var(--text-color);
+    color: var(--text-light);
     position: relative;
     padding: 0 20px; /* Padding for quote marks */
 }
@@ -489,7 +490,7 @@ section h2::after {
 
 .testimonial-company {
     font-size: 0.95em; /* Slightly larger company text */
-    color: var(--text-color);
+    color: var(--text-light);
     margin-top: 5px;
 }
 
@@ -567,7 +568,7 @@ section h2::after {
 .contact-info p {
     margin-bottom: 15px;
     line-height: 1.8;
-    color: var(--text-color);
+    color: var(--text-light);
 }
 
 .contact-info ul {
@@ -577,7 +578,7 @@ section h2::after {
 
 .contact-info ul li {
     margin-bottom: 10px;
-    color: var(--text-color);
+    color: var(--text-light);
 }
 
 .contact-info ul li strong {
@@ -630,7 +631,7 @@ section h2::after {
     border: 1px solid var(--border-color);
     border-radius: 8px;
     background-color: var(--secondary-bg);
-    color: var(--text-color);
+    color: var(--text-light);
     font-family: 'Montserrat', sans-serif;
     font-size: 1em;
     box-sizing: border-box; /* Include padding in width */
@@ -657,7 +658,7 @@ section h2::after {
 /* Footer */
 footer {
     background-color: var(--secondary-bg);
-    color: var(--text-color);
+    color: var(--text-light);
     text-align: center;
     padding: 40px 0 20px;
     border-top: 1px solid var(--border-color);
@@ -672,7 +673,7 @@ footer p {
 }
 
 footer .footer-links a {
-    color: var(--text-color);
+    color: var(--text-light);
     margin: 0 15px;
     transition: color 0.3s ease;
 }
@@ -840,7 +841,7 @@ footer .footer-links a:hover {
 .testimonial-quote {
     font-size: 1.18em;
     font-style: italic;
-    color: var(--text-color);
+    color: var(--text-light);
     margin-bottom: 1.2em;
     position: relative;
     padding: 0 10px;
@@ -887,7 +888,7 @@ footer .footer-links a:hover {
     padding: 12px 14px;
     font-size: 1.08em;
     background: var(--secondary-bg);
-    color: var(--text-color);
+    color: var(--text-light);
     transition: border-color 0.3s, box-shadow 0.3s;
 }
 .feedback-form-modern input:focus,
@@ -1462,5 +1463,475 @@ footer .footer-links a:hover {
     .fade-in {
         opacity: 1 !important;
         transform: none !important;
+    }
+}
+
+/* --- Practice Area Details Modal --- */
+.practice-details {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(74, 16, 42, 0.95);
+    z-index: 2000;
+    overflow-y: auto;
+}
+.practice-details.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.practice-details-content {
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 800px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    border: 3px solid var(--accent-color);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    position: relative;
+}
+.practice-details-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--accent-color);
+    color: var(--text-light);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.practice-details-close:hover {
+    background: var(--heading-color);
+    color: var(--text-dark);
+    transform: scale(1.1);
+}
+.practice-details h2 {
+    color: var(--heading-color);
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+.practice-details h3 {
+    color: var(--accent-color);
+    margin: 20px 0 10px 0;
+    font-size: 1.3em;
+}
+.practice-details p, .practice-details li {
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+.practice-details ul {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+.practice-description {
+    font-size: 1.1em;
+    font-style: italic;
+    color: var(--text-light);
+    margin-bottom: 25px;
+    padding: 15px;
+    background: rgba(197, 23, 46, 0.1);
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-color);
+}
+.practice-cta {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(252, 242, 89, 0.1);
+    border-radius: 12px;
+    border: 2px solid var(--heading-color);
+}
+
+/* --- Publication Preview Modal --- */
+.publication-preview {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(74, 16, 42, 0.95);
+    z-index: 2000;
+    overflow-y: auto;
+}
+.publication-preview.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.publication-preview-content {
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 900px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    border: 3px solid var(--accent-color);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    position: relative;
+}
+.publication-preview-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--accent-color);
+    color: var(--text-light);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.publication-preview-close:hover {
+    background: var(--heading-color);
+    color: var(--text-dark);
+    transform: scale(1.1);
+}
+.publication-preview h2 {
+    color: var(--heading-color);
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+.publication-preview h3 {
+    color: var(--accent-color);
+    margin: 20px 0 10px 0;
+    font-size: 1.2em;
+}
+.publication-preview p {
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+.publication-journal {
+    color: var(--accent-color);
+    font-style: italic;
+    margin-bottom: 20px;
+    padding: 10px;
+    background: rgba(197, 23, 46, 0.1);
+    border-radius: 6px;
+}
+.publication-cta {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(252, 242, 89, 0.1);
+    border-radius: 12px;
+    border: 2px solid var(--heading-color);
+}
+
+/* --- Practice Card Footer --- */
+.practice-card-footer {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(197, 23, 46, 0.3);
+}
+.click-hint {
+    color: var(--accent-color);
+    font-size: 0.9em;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    transition: all 0.3s ease;
+}
+.practice-card:hover .click-hint {
+    color: var(--heading-color);
+    transform: translateX(3px);
+}
+
+/* --- Publication Preview Hints --- */
+.preview-hint {
+    color: var(--accent-color);
+    font-size: 0.85em;
+    font-style: italic;
+    margin-left: 10px;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+.publications-list li:hover .preview-hint {
+    color: var(--heading-color);
+    opacity: 1;
+}
+
+/* --- Enhanced Form Styling --- */
+.enhanced-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.enhanced-form .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.enhanced-form label {
+    font-weight: 600;
+    color: var(--accent-color);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.enhanced-form label i {
+    color: var(--accent-color);
+    width: 16px;
+}
+.enhanced-form input,
+.enhanced-form textarea,
+.enhanced-form select {
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-size: 1.08em;
+    background: var(--secondary-bg);
+    color: var(--text-light);
+    transition: all 0.3s ease;
+}
+.enhanced-form input:focus,
+.enhanced-form textarea:focus,
+.enhanced-form select:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(197, 23, 46, 0.2);
+    outline: none;
+    transform: translateY(-2px);
+}
+.enhanced-form input::placeholder,
+.enhanced-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+.enhanced-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+.enhanced-form select {
+    cursor: pointer;
+}
+.enhanced-form select option {
+    background: var(--secondary-bg);
+    color: var(--text-light);
+}
+
+/* --- Checkbox Styling --- */
+.checkbox-group {
+    margin-top: 10px;
+}
+.checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 0.95em;
+    line-height: 1.4;
+}
+.checkbox-label input[type="checkbox"] {
+    display: none;
+}
+.checkmark {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--accent-color);
+    border-radius: 4px;
+    position: relative;
+    flex-shrink: 0;
+    margin-top: 2px;
+    transition: all 0.3s ease;
+}
+.checkbox-label input[type="checkbox"]:checked + .checkmark {
+    background: var(--accent-color);
+}
+.checkbox-label input[type="checkbox"]:checked + .checkmark::after {
+    content: '\f00c';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--text-light);
+    font-size: 0.8em;
+}
+
+/* --- Enhanced Submit Button --- */
+.enhanced-submit {
+    position: relative;
+    overflow: hidden;
+    margin-top: 10px;
+    font-size: 1.1em;
+    font-weight: 700;
+    padding: 15px 30px;
+}
+.enhanced-submit::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+}
+.enhanced-submit:hover::before {
+    left: 100%;
+}
+.enhanced-submit:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* --- Form Loading States --- */
+.enhanced-submit .fa-spinner {
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* --- Enhanced Publications List --- */
+.publications-list li {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+    position: relative;
+    overflow: hidden;
+}
+.publications-list li::before {
+    content: '\f0f6';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+}
+.publications-list li:hover::before {
+    transform: translateY(-50%) scale(1.2);
+    color: var(--heading-color);
+}
+.publications-list li a {
+    margin-left: 25px;
+    display: block;
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.publications-list li:hover a {
+    color: var(--accent-color);
+}
+
+/* --- Modal Scrollbar Styling --- */
+.practice-details-content::-webkit-scrollbar,
+.publication-preview-content::-webkit-scrollbar {
+    width: 8px;
+}
+.practice-details-content::-webkit-scrollbar-track,
+.publication-preview-content::-webkit-scrollbar-track {
+    background: var(--secondary-bg);
+    border-radius: 4px;
+}
+.practice-details-content::-webkit-scrollbar-thumb,
+.publication-preview-content::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 4px;
+}
+.practice-details-content::-webkit-scrollbar-thumb:hover,
+.publication-preview-content::-webkit-scrollbar-thumb:hover {
+    background: var(--heading-color);
+}
+
+/* --- Enhanced Practice Cards --- */
+.practice-card {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+.practice-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 30px 30px 0;
+    border-color: transparent var(--accent-color) transparent transparent;
+    opacity: 0.1;
+    transition: all 0.3s ease;
+}
+.practice-card:hover::after {
+    opacity: 0.3;
+    transform: scale(1.1);
+}
+
+/* --- Responsive Modal Design --- */
+@media (max-width: 768px) {
+    .practice-details-content,
+    .publication-preview-content {
+        width: 95%;
+        padding: 30px 20px;
+        max-height: 85vh;
+    }
+    .practice-details h2,
+    .publication-preview h2 {
+        font-size: 1.6em;
+    }
+    .practice-details h3,
+    .publication-preview h3 {
+        font-size: 1.1em;
+    }
+    .practice-details-close,
+    .publication-preview-close {
+        width: 35px;
+        height: 35px;
+        font-size: 1em;
+        top: 15px;
+        right: 15px;
+    }
+    .enhanced-form {
+        gap: 15px;
+    }
+    .enhanced-form input,
+    .enhanced-form textarea,
+    .enhanced-form select {
+        padding: 10px 12px;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .practice-details-content,
+    .publication-preview-content {
+        width: 98%;
+        padding: 25px 15px;
+    }
+    .practice-details h2,
+    .publication-preview h2 {
+        font-size: 1.4em;
+    }
+    .click-hint,
+    .preview-hint {
+        font-size: 0.8em;
+    }
+    .enhanced-submit {
+        padding: 12px 24px;
+        font-size: 1em;
     }
 }
