@@ -1,18 +1,18 @@
 :root {
-    --primary-bg: #fffdf6; /* Cream White - Main background */
-    --secondary-bg: #faf6e9; /* Warm Cream - Background for cards, sections */
-    --text-color: #4a5d3a; /* Dark Olive - For general text */
-    --heading-color: #2d3a1f; /* Darker Olive - For headings */
-    --accent-color: #a0c878; /* Olive Green - For buttons, links, highlights */
-    --border-color: #ddeb9d; /* Sage Green - For subtle borders, lines */
+    --primary-bg: #fff7d1; /* Light Yellow - Main background */
+    --secondary-bg: #ffecc8; /* Warm Cream - Background for cards, sections */
+    --text-color: #8b5a3c; /* Dark Brown - For general text */
+    --heading-color: #5d3a1f; /* Darker Brown - For headings */
+    --accent-color: #ffb0b0; /* Coral Pink - For buttons, links, highlights */
+    --border-color: #ffd09b; /* Peach - For subtle borders, lines */
     --card-bg: #ffffff; /* White - Card backgrounds */
-    --nav-link-hover: rgba(160, 200, 120, 0.2);
-    --gradient-start: #fffdf6;
-    --gradient-end: #faf6e9;
-    --testimonial-section-bg: #faf6e9;
-    --highlight-color: #a0c878; /* Olive Green for highlights */
-    --text-light: #4a5d3a; /* Dark Olive text for light backgrounds */
-    --text-dark: #2d3a1f; /* Darker text for emphasis */
+    --nav-link-hover: rgba(255, 176, 176, 0.2);
+    --gradient-start: #fff7d1;
+    --gradient-end: #ffecc8;
+    --testimonial-section-bg: #ffecc8;
+    --highlight-color: #ffb0b0; /* Coral Pink for highlights */
+    --text-light: #8b5a3c; /* Dark Brown text for light backgrounds */
+    --text-dark: #5d3a1f; /* Darker text for emphasis */
 }
 
 body {
@@ -86,7 +86,7 @@ a {
     width: 100%;
     z-index: 1000;
     padding: 15px 0;
-    background: rgba(255, 253, 246, 0.95); /* Cream White with transparency */
+    background: rgba(255, 247, 209, 0.95); /* Light Yellow with transparency */
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -167,10 +167,18 @@ a {
 
 .nav-links a:hover {
     color: var(--accent-color);
+    background: var(--nav-link-hover);
+    transform: translateY(-2px);
 }
 
 .nav-links a:hover::after {
     width: 100%;
+}
+
+.nav-links a.active {
+    color: var(--accent-color);
+    background: var(--nav-link-hover);
+    border-bottom: 2px solid var(--accent-color);
 }
 
 .menu-toggle {
@@ -244,11 +252,14 @@ a {
     box-shadow: 0 5px 15px rgba(255, 214, 186, 0.3);
     text-align: center;
 }
-.btn-primary:hover,
-.btn:hover {
-    background-color: var(--heading-color);
-    color: var(--card-bg);
-    transform: translateY(-2px) scale(1.03);
+.btn-primary:hover {
+    background: linear-gradient(135deg, #ffb0b0, #ffd09b);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 176, 176, 0.4);
+}
+.btn-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 15px rgba(255, 176, 176, 0.3);
 }
 
 /* Section Headers */
@@ -373,7 +384,7 @@ a {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(160, 200, 120, 0.1), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 176, 176, 0.1), transparent);
     transition: left 0.5s ease;
 }
 .practice-card:hover::before {
@@ -381,7 +392,7 @@ a {
 }
 .practice-card:hover {
     transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 15px 40px rgba(160, 200, 120, 0.3);
+    box-shadow: 0 15px 40px rgba(255, 176, 176, 0.3);
     border-color: var(--heading-color);
 }
 .practice-card h3 {
@@ -398,11 +409,11 @@ a {
 .practice-icon {
     font-size: 2.5em;
     color: var(--accent-color);
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     transition: transform 0.3s ease, color 0.3s ease;
 }
 .practice-card:hover .practice-icon {
-    transform: scale(1.1) rotate(5deg);
+    transform: scale(1.1);
     color: var(--heading-color);
 }
 
@@ -496,33 +507,29 @@ section h2::after {
 }
 .testimonial-card-modern {
     background: var(--card-bg);
-    border-radius: 18px;
-    box-shadow: 0 6px 32px rgba(0,0,0,0.1);
-    border: 2px solid var(--accent-color);
-    padding: 36px 28px 28px 28px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(255, 176, 176, 0.15);
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
-    transition: box-shadow 0.3s, transform 0.2s;
+    overflow: hidden;
 }
 .testimonial-card-modern:hover {
-    box-shadow: 0 12px 40px rgba(255, 214, 186, 0.3);
-    transform: translateY(-4px) scale(1.03);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(255, 176, 176, 0.25);
 }
 .testimonial-avatar {
-    width: 56px;
-    height: 56px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--accent-color), var(--border-color));
     border-radius: 50%;
-    background: var(--accent-color);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2em;
-    color: var(--text-dark);
-    margin-bottom: 18px;
-    box-shadow: 0 2px 8px rgba(255, 214, 186, 0.3);
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    color: white;
 }
 .testimonial-quote {
     font-size: 1.18em;
@@ -598,23 +605,22 @@ section h2::after {
     margin-top: 18px;
 }
 .social-links a {
-    width: 45px;
-    height: 45px;
-    background: var(--accent-color);
-    color: var(--text-dark);
-    border-radius: 50%;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.3em;
-    transition: all 0.3s ease;
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, var(--accent-color), var(--border-color));
+    color: white;
+    border-radius: 50%;
+    margin: 0 8px;
     text-decoration: none;
+    font-size: 1.2em;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .social-links a:hover {
-    background: var(--heading-color);
-    color: var(--card-bg);
     transform: translateY(-3px) scale(1.1);
-    box-shadow: 0 5px 15px rgba(139, 69, 19, 0.3);
+    box-shadow: 0 8px 20px rgba(255, 176, 176, 0.4);
 }
 
 /* Enhanced Form Styling */
@@ -653,7 +659,7 @@ section h2::after {
 .feedback-form-modern input:focus,
 .feedback-form-modern textarea:focus {
     border-color: var(--accent-color);
-    box-shadow: 0 0 0 3px rgba(160, 200, 120, 0.2);
+    box-shadow: 0 0 0 3px rgba(255, 176, 176, 0.2);
     outline: none;
     transform: translateY(-2px);
 }
@@ -677,18 +683,21 @@ section h2::after {
     right: 30px;
     width: 50px;
     height: 50px;
-    background: var(--accent-color);
-    color: var(--text-dark);
+    background: linear-gradient(135deg, var(--accent-color), var(--border-color));
+    color: white;
     border: none;
     border-radius: 50%;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 1.2em;
-    box-shadow: 0 4px 20px rgba(255, 214, 186, 0.4);
-    transition: all 0.3s ease;
     opacity: 0;
     visibility: hidden;
     transform: translateY(20px);
+    transition: all 0.3s ease;
     z-index: 1000;
+    box-shadow: 0 4px 15px rgba(255, 176, 176, 0.3);
 }
 .back-to-top-btn.show {
     opacity: 1;
@@ -697,7 +706,6 @@ section h2::after {
 }
 .back-to-top-btn:hover {
     background: var(--heading-color);
-    color: var(--card-bg);
     transform: translateY(-3px);
     box-shadow: 0 6px 25px rgba(139, 69, 19, 0.4);
 }
@@ -709,23 +717,22 @@ section h2::after {
     left: 30px;
     width: 60px;
     height: 60px;
-    background: #25d366;
+    background: linear-gradient(135deg, #25d366, #128c7e);
     color: white;
     border-radius: 50%;
     text-align: center;
     font-size: 1.8em;
-    box-shadow: 0 4px 20px rgba(37,211,102,0.3);
-    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
     z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .whatsapp-float:hover {
-    background: #128c7e;
     transform: scale(1.1);
-    box-shadow: 0 6px 25px rgba(37,211,102,0.4);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
 }
 
 /* Practice Area Details Modal */
@@ -736,7 +743,7 @@ section h2::after {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 253, 246, 0.95);
+    background: rgba(255, 247, 209, 0.95);
     z-index: 2000;
     overflow-y: auto;
 }
@@ -801,7 +808,7 @@ section h2::after {
     color: var(--text-color);
     margin-bottom: 25px;
     padding: 15px;
-    background: rgba(160, 200, 120, 0.1);
+    background: rgba(255, 176, 176, 0.1);
     border-radius: 8px;
     border-left: 4px solid var(--accent-color);
 }
@@ -809,7 +816,7 @@ section h2::after {
     text-align: center;
     margin-top: 30px;
     padding: 20px;
-    background: rgba(160, 200, 120, 0.1);
+    background: rgba(255, 176, 176, 0.1);
     border-radius: 12px;
     border: 2px solid var(--accent-color);
 }
@@ -822,7 +829,7 @@ section h2::after {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 242, 235, 0.95);
+    background: rgba(255, 247, 209, 0.95);
     z-index: 2000;
     overflow-y: auto;
 }
@@ -882,7 +889,7 @@ section h2::after {
     font-style: italic;
     margin-bottom: 20px;
     padding: 10px;
-    background: rgba(160, 200, 120, 0.1);
+    background: rgba(255, 176, 176, 0.1);
     border-radius: 6px;
 }
 .publication-cta {
@@ -1129,19 +1136,20 @@ section h2::after {
 }
 .feedback-form-modern input,
 .feedback-form-modern textarea {
-    border: 1.5px solid var(--border-color);
+    border: 2px solid var(--border-color);
     border-radius: 8px;
     padding: 12px 14px;
     font-size: 1.08em;
     background: var(--secondary-bg);
-    color: var(--text-light);
+    color: var(--text-color);
     transition: border-color 0.3s, box-shadow 0.3s;
 }
 .feedback-form-modern input:focus,
 .feedback-form-modern textarea:focus {
     border-color: var(--accent-color);
-    box-shadow: 0 0 0 2px rgba(197,157,95,0.13);
+    box-shadow: 0 0 0 3px rgba(255, 176, 176, 0.2);
     outline: none;
+    transform: translateY(-2px);
 }
 .feedback-form-modern textarea {
     min-height: 100px;
@@ -1232,18 +1240,21 @@ section h2::after {
     right: 30px;
     width: 50px;
     height: 50px;
-    background: var(--accent-color);
+    background: linear-gradient(135deg, var(--accent-color), var(--border-color));
     color: white;
     border: none;
     border-radius: 50%;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 1.2em;
-    box-shadow: 0 4px 20px rgba(197,157,95,0.3);
-    transition: all 0.3s ease;
     opacity: 0;
     visibility: hidden;
     transform: translateY(20px);
+    transition: all 0.3s ease;
     z-index: 1000;
+    box-shadow: 0 4px 15px rgba(255, 176, 176, 0.3);
 }
 .back-to-top-btn.show {
     opacity: 1;
@@ -1253,7 +1264,7 @@ section h2::after {
 .back-to-top-btn:hover {
     background: var(--heading-color);
     transform: translateY(-3px);
-    box-shadow: 0 6px 25px rgba(197,157,95,0.4);
+    box-shadow: 0 6px 25px rgba(139, 69, 19, 0.4);
 }
 
 /* --- Floating WhatsApp Button --- */
@@ -1263,23 +1274,22 @@ section h2::after {
     left: 30px;
     width: 60px;
     height: 60px;
-    background: #25d366;
+    background: linear-gradient(135deg, #25d366, #128c7e);
     color: white;
     border-radius: 50%;
     text-align: center;
     font-size: 1.8em;
-    box-shadow: 0 4px 20px rgba(37,211,102,0.3);
-    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
     z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .whatsapp-float:hover {
-    background: #128c7e;
     transform: scale(1.1);
-    box-shadow: 0 6px 25px rgba(37,211,102,0.4);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
 }
 
 /* --- Enhanced Hover Effects --- */
@@ -1295,7 +1305,7 @@ section h2::after {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(160, 200, 120, 0.1), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 176, 176, 0.1), transparent);
     transition: left 0.5s ease;
 }
 .practice-card:hover::before {
@@ -1303,7 +1313,7 @@ section h2::after {
 }
 .practice-card:hover {
     transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 15px 40px rgba(160, 200, 120, 0.3);
+    box-shadow: 0 15px 40px rgba(255, 176, 176, 0.3);
     border-color: var(--heading-color);
 }
 
@@ -1334,7 +1344,7 @@ section h2::after {
 .social-links a {
     width: 45px;
     height: 45px;
-    background: var(--accent-color);
+    background: linear-gradient(135deg, var(--accent-color), var(--border-color));
     color: white;
     border-radius: 50%;
     display: flex;
@@ -1709,7 +1719,7 @@ section h2::after {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 253, 246, 0.95);
+    background: rgba(255, 247, 209, 0.95);
     z-index: 2000;
     overflow-y: auto;
 }
@@ -1774,7 +1784,7 @@ section h2::after {
     color: var(--text-color);
     margin-bottom: 25px;
     padding: 15px;
-    background: rgba(160, 200, 120, 0.1);
+    background: rgba(255, 176, 176, 0.1);
     border-radius: 8px;
     border-left: 4px solid var(--accent-color);
 }
@@ -1782,7 +1792,7 @@ section h2::after {
     text-align: center;
     margin-top: 30px;
     padding: 20px;
-    background: rgba(160, 200, 120, 0.1);
+    background: rgba(255, 176, 176, 0.1);
     border-radius: 12px;
     border: 2px solid var(--accent-color);
 }
@@ -1795,7 +1805,7 @@ section h2::after {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 242, 235, 0.95);
+    background: rgba(255, 247, 209, 0.95);
     z-index: 2000;
     overflow-y: auto;
 }
@@ -1855,7 +1865,7 @@ section h2::after {
     font-style: italic;
     margin-bottom: 20px;
     padding: 10px;
-    background: rgba(160, 200, 120, 0.1);
+    background: rgba(255, 176, 176, 0.1);
     border-radius: 6px;
 }
 .publication-cta {
@@ -1871,7 +1881,7 @@ section h2::after {
 .practice-card-footer {
     margin-top: 20px;
     padding-top: 15px;
-    border-top: 1px solid rgba(160, 200, 120, 0.3);
+    border-top: 1px solid rgba(255, 176, 176, 0.3);
 }
 .click-hint {
     color: var(--accent-color);
@@ -1939,13 +1949,13 @@ section h2::after {
 .enhanced-form textarea:focus,
 .enhanced-form select:focus {
     border-color: var(--accent-color);
-    box-shadow: 0 0 0 3px rgba(160, 200, 120, 0.2);
+    box-shadow: 0 0 0 3px rgba(255, 176, 176, 0.2);
     outline: none;
     transform: translateY(-2px);
 }
 .enhanced-form input::placeholder,
 .enhanced-form textarea::placeholder {
-    color: rgba(74, 93, 58, 0.6);
+    color: rgba(139, 90, 60, 0.6);
 }
 .enhanced-form textarea {
     min-height: 120px;
@@ -1965,11 +1975,11 @@ section h2::after {
 }
 .checkbox-label {
     display: flex;
-    align-items: flex-start;
-    gap: 10px;
+    align-items: center;
     cursor: pointer;
     font-size: 0.95em;
-    line-height: 1.4;
+    color: var(--text-color);
+    margin-bottom: 10px;
 }
 .checkbox-label input[type="checkbox"] {
     display: none;
@@ -1977,26 +1987,26 @@ section h2::after {
 .checkmark {
     width: 20px;
     height: 20px;
-    border: 2px solid var(--accent-color);
+    background: var(--secondary-bg);
+    border: 2px solid var(--border-color);
     border-radius: 4px;
+    margin-right: 10px;
     position: relative;
-    flex-shrink: 0;
-    margin-top: 2px;
     transition: all 0.3s ease;
 }
 .checkbox-label input[type="checkbox"]:checked + .checkmark {
     background: var(--accent-color);
+    border-color: var(--accent-color);
 }
 .checkbox-label input[type="checkbox"]:checked + .checkmark::after {
-    content: '\f00c';
-    font-family: 'Font Awesome 6 Free';
-    font-weight: 900;
+    content: '✓';
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: var(--text-dark);
-    font-size: 0.8em;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
 }
 
 /* --- Enhanced Submit Button --- */
