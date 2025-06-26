@@ -1,18 +1,18 @@
 :root {
-    --primary-bg: #4a102a; /* Dark Maroon - Main background */
-    --secondary-bg: #85193c; /* Rich Red - Background for cards, sections */
-    --text-color: #ffffff; /* White - For general text */
-    --heading-color: #fcf259; /* Bright Yellow - For headings */
-    --accent-color: #c5172e; /* Vibrant Orange - For buttons, links, highlights */
-    --border-color: #85193c; /* Rich Red - For subtle borders, lines */
-    --card-bg: #4a102a; /* Dark Maroon - Card backgrounds */
-    --nav-link-hover: rgba(197, 23, 46, 0.2);
-    --gradient-start: #4a102a;
-    --gradient-end: #85193c;
-    --testimonial-section-bg: #85193c;
-    --highlight-color: #fcf259; /* Bright Yellow for highlights */
-    --text-light: #ffffff; /* White text */
-    --text-dark: #4a102a; /* Dark text for light backgrounds */
+    --primary-bg: #fff2eb; /* Cream - Main background */
+    --secondary-bg: #ffdcdc; /* Light Pink - Background for cards, sections */
+    --text-color: #4a4a4a; /* Dark Gray - For general text */
+    --heading-color: #8b4513; /* Saddle Brown - For headings */
+    --accent-color: #ffd6ba; /* Coral - For buttons, links, highlights */
+    --border-color: #ffe8cd; /* Peach - For subtle borders, lines */
+    --card-bg: #ffffff; /* White - Card backgrounds */
+    --nav-link-hover: rgba(255, 214, 186, 0.3);
+    --gradient-start: #fff2eb;
+    --gradient-end: #ffdcdc;
+    --testimonial-section-bg: #ffdcdc;
+    --highlight-color: #ffd6ba; /* Coral for highlights */
+    --text-light: #4a4a4a; /* Dark text for light backgrounds */
+    --text-dark: #2c2c2c; /* Darker text for emphasis */
 }
 
 body {
@@ -20,7 +20,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: var(--text-light);
+    color: var(--text-color);
     background-color: var(--primary-bg);
     overflow-x: hidden;
     position: relative;
@@ -86,10 +86,10 @@ a {
     width: 100%;
     z-index: 1000;
     padding: 15px 0;
-    background: var(--secondary-bg); /* Match glass effect background */
+    background: rgba(255, 242, 235, 0.95); /* Cream with transparency */
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Lighter shadow */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid var(--border-color);
 }
 
@@ -121,7 +121,7 @@ a {
 }
 
 .nav-links a {
-    color: var(--text-light);
+    color: var(--text-color);
     font-weight: 500;
     padding: 8px 0;
     position: relative;
@@ -157,7 +157,7 @@ a {
 .menu-toggle span {
     height: 3px;
     width: 25px;
-    background-color: var(--text-light);
+    background-color: var(--text-color);
     margin-bottom: 4px;
     border-radius: 5px;
     transition: all 0.3s;
@@ -187,7 +187,7 @@ a {
     object-fit: cover;
     border: 5px solid var(--accent-color);
     margin-bottom: 20px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Lighter shadow */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
 .hero-content h1 {
@@ -198,25 +198,186 @@ a {
 }
 
 .hero-content p {
-    font-size: 1.3em;
+    font-size: 1.2em;
     margin-bottom: 30px;
-    color: var(--text-light);
+    color: var(--text-color);
 }
 
-.btn {
+.btn,
+.btn-primary {
     display: inline-block;
-    padding: 12px 30px;
+    padding: 14px 36px;
     background-color: var(--accent-color);
-    color: white;
+    color: var(--text-dark);
     border-radius: 8px;
     font-weight: 600;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Lighter shadow */
+    font-size: 1.1em;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0 5px 15px rgba(255, 214, 186, 0.3);
+    text-align: center;
+}
+.btn-primary:hover,
+.btn:hover {
+    background-color: var(--heading-color);
+    color: var(--card-bg);
+    transform: translateY(-2px) scale(1.03);
 }
 
-.btn:hover {
-    background-color: #7DA668; /* Slightly darker muted green for hover */
-    transform: translateY(-2px);
+/* Section Headers */
+.section-header {
+    text-align: center;
+    margin-bottom: 2.5em;
+}
+.section-header h2 {
+    font-size: 2.4em;
+    font-family: 'Playfair Display', serif;
+    color: var(--heading-color);
+    position: relative;
+    display: inline-block;
+}
+.section-header h2::after {
+    content: '';
+    display: block;
+    margin: 12px auto 0 auto;
+    width: 60px;
+    height: 3px;
+    background: var(--accent-color);
+    border-radius: 2px;
+}
+
+/* Stats Section */
+.stats-section {
+    padding: 56px 0 32px 0;
+    background: var(--secondary-bg);
+}
+.stats-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+.stat-card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+    padding: 36px 32px 28px 32px;
+    min-width: 180px;
+    text-align: center;
+    margin-bottom: 16px;
+    border: 2px solid var(--accent-color);
+}
+.stat-card h3 {
+    font-size: 2.2em;
+    color: var(--accent-color);
+    margin-bottom: 0.2em;
+}
+.stat-card p {
+    font-size: 1.1em;
+    color: var(--text-color);
+    margin: 0;
+}
+
+/* Animated Stat Numbers */
+.stat-number {
+    font-size: 2.6em;
+    font-weight: 800;
+    color: var(--accent-color);
+    display: inline-block;
+    margin-right: 2px;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+.stat-unit {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: var(--heading-color);
+    margin-left: 2px;
+}
+
+/* About Section */
+.about-section {
+    background: var(--primary-bg);
+    padding: 64px 0 32px 0;
+}
+.about-flex {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+}
+.about-card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+    padding: 40px 36px;
+    max-width: 700px;
+    font-size: 1.15em;
+    color: var(--text-color);
+    border: 2px solid var(--accent-color);
+}
+
+/* Practice Areas */
+.practice-section {
+    background: var(--secondary-bg);
+    padding: 64px 0 32px 0;
+}
+.practice-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 32px;
+}
+.practice-card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+    padding: 36px 28px 28px 28px;
+    text-align: center;
+    border: 2px solid var(--accent-color);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+.practice-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 214, 186, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+.practice-card:hover::before {
+    left: 100%;
+}
+.practice-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(255, 214, 186, 0.3);
+    border-color: var(--heading-color);
+}
+.practice-card h3 {
+    font-size: 1.3em;
+    margin-bottom: 0.5em;
+    color: var(--heading-color);
+}
+.practice-card p {
+    font-size: 1em;
+    color: var(--text-color);
+}
+
+/* Professional Practice Icons */
+.practice-icon {
+    font-size: 2.5em;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+.practice-card:hover .practice-icon {
+    transform: scale(1.1) rotate(5deg);
+    color: var(--heading-color);
 }
 
 /* Sections */
@@ -246,440 +407,518 @@ section h2::after {
     border-radius: 2px;
 }
 
-/* About Section */
-.about-content {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    flex-wrap: wrap;
-}
-
-.about-text, .about-stats {
-    flex: 1;
-    min-width: 300px;
-}
-
-.about-text p {
-    line-height: 1.8;
-    margin-bottom: 15px;
-}
-
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 20px;
-    margin-top: 30px;
-}
-
-.stat-item {
-    text-align: center;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: var(--secondary-bg);
-    border: 1px solid var(--border-color);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03); /* Very light shadow */
-}
-
-.stat-item h3 {
-    font-size: 2.5em;
-    margin-bottom: 5px;
-    color: var(--accent-color);
-}
-
-.stat-item p {
-    font-size: 1em;
-    color: var(--text-light);
-    margin: 0;
-}
-
-/* --- Animated Stat Numbers --- */
-.stat-number {
-    font-size: 2.6em;
-    font-weight: 800;
-    color: var(--accent-color);
-    display: inline-block;
-    margin-right: 2px;
-    letter-spacing: 1px;
-    transition: color 0.3s;
-}
-.stat-unit {
-    font-size: 1.2em;
-    font-weight: 600;
-    color: var(--heading-color);
-    margin-left: 2px;
-}
-
-/* Content Showcase (Practice Areas) */
-.content-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    justify-content: center;
-    align-items: stretch; /* Ensure all cards stretch to the same height */
-}
-
-.content-card {
-    background-color: var(--card-bg);
-    border-radius: 12px;
-    border: 1px solid var(--border-color);
-    padding: 25px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    min-height: 250px; /* Adjust this value if cards are too short or too tall */
-}
-
-.content-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-}
-
-.content-card h3 {
-    font-size: 1.6em;
-    margin-bottom: 15px;
-    color: var(--heading-color);
-    flex-shrink: 0;
-}
-
-.content-card p {
-    font-size: 0.95em;
-    line-height: 1.6;
-    color: var(--text-light);
-    flex-grow: 1;
-}
-
-.content-card .icon {
-    font-size: 3em;
-    color: var(--accent-color);
-    margin-bottom: 20px;
-    flex-shrink: 0;
-}
-
 /* Publications Section */
-#publications .publications-list {
+.publications-section {
+    background: var(--primary-bg);
+    padding: 64px 0 32px 0;
+}
+.publications-list {
+    background: var(--card-bg);
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+    padding: 32px 28px;
+    border: 2px solid var(--accent-color);
+    max-width: 700px;
     margin: 0 auto;
-    max-width: 800px; /* Constrain width for readability */
-    padding: 30px;
-    line-height: 1.8;
 }
-
-#publications .publications-list ul {
-    list-style: none; /* Remove default bullet points */
-    padding: 0;
-}
-
-#publications .publications-list li {
-    margin-bottom: 15px;
-    position: relative;
-    padding-left: 25px; /* Space for custom bullet */
-}
-
-#publications .publications-list li::before {
-    content: '📚'; /* Custom bullet icon */
-    position: absolute;
-    left: 0;
-    top: 0;
-    font-size: 1.2em;
-    color: var(--accent-color);
-}
-
-#publications .publications-list a {
-    color: var(--text-light);
-    font-weight: 500;
-    transition: color 0.3s ease;
-    border-bottom: 1px solid transparent; /* Underline effect */
-    padding-bottom: 2px;
-}
-
-#publications .publications-list a:hover {
-    color: var(--accent-color);
-    border-color: var(--accent-color);
-}
-
-
-/* Testimonials Section Specific Outlook */
-#testimonials {
-    background-color: var(--testimonial-section-bg); /* Use the new distinct background color */
-    padding: 100px 0; /* More vertical padding for visual separation */
-    border-top: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
-}
-
-.testimonial-slider {
-    position: relative;
-    max-width: 800px;
-    margin: 0 auto;
-    overflow: hidden;
-    /* Removed padding here as buttons are now inside, adjusted margin for cards */
-}
-
-.testimonial-wrapper {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    margin-right: -30px; /* Counteract margin-right on cards for full width */
-}
-
-.testimonial-card {
-    flex: 0 0 calc(100% - 30px); /* 100% width minus margin-right */
-    background-color: var(--card-bg);
-    border-radius: 15px; /* Slightly more rounded corners */
-    border: 2px solid var(--accent-color); /* More prominent border with accent color */
-    padding: 35px; /* More padding inside cards */
-    margin-right: 30px; /* Space between cards in wrapper */
-    text-align: center;
-    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1); /* Stronger shadow */
-    min-height: 220px; /* Ensure consistent height */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative; /* For pseudo-elements */
-    overflow: hidden; /* Ensure nothing spills out */
-}
-
-.testimonial-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 8px; /* Accent line at the top */
-    background-color: var(--accent-color);
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-}
-
-.testimonial-quote {
-    font-size: 1.25em; /* Slightly larger quote */
-    font-style: italic;
-    margin-bottom: 25px; /* More space below quote */
-    color: var(--text-light);
-    position: relative;
-    padding: 0 20px; /* Padding for quote marks */
-}
-
-.testimonial-quote::before, .testimonial-quote::after {
-    font-family: 'Playfair Display', serif;
-    font-size: 3.5em; /* Larger quote marks */
-    color: var(--accent-color);
-    position: absolute;
-    opacity: 0.3; /* A bit more visible opacity */
-    line-height: 0.8; /* Adjust line height for positioning */
-}
-
-.testimonial-quote::before {
-    content: '“';
-    top: -15px; /* Adjust position */
-    left: -10px; /* Adjust position */
-}
-
-.testimonial-quote::after {
-    content: '”';
-    bottom: -15px; /* Adjust position */
-    right: -10px; /* Adjust position */
-}
-
-.testimonial-author {
-    font-weight: 700; /* Bolder author name */
-    color: var(--heading-color);
-    margin-top: 10px; /* Space from quote */
-}
-
-.testimonial-company {
-    font-size: 0.95em; /* Slightly larger company text */
-    color: var(--text-light);
-    margin-top: 5px;
-}
-
-.slider-nav-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: var(--accent-color);
-    color: white;
-    border: none;
-    padding: 12px 18px; /* Larger buttons */
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 1.8em; /* Larger arrow icons */
-    z-index: 10;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* More prominent shadow for buttons */
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.slider-nav-btn:hover {
-    background-color: #7DA668; /* Darker accent on hover */
-    transform: translateY(-50%) scale(1.05); /* Slight grow effect */
-}
-
-.prev-btn {
-    left: -20px; /* Position buttons inside/at edge of the slider container */
-}
-
-.next-btn {
-    right: -20px; /* Position buttons inside/at edge of the slider container */
-}
-
-/* Testimonial Slider Controls (Dots) */
-.testimonial-slider-controls {
-    display: flex;
-    justify-content: center;
-    margin-top: 40px; /* Space below slider */
-    gap: 10px; /* Space between dots */
-}
-
-.dot-button {
-    width: 12px;
-    height: 12px;
-    background-color: var(--border-color); /* Inactive dot color */
-    border: 1px solid var(--accent-color);
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    padding: 0; /* Remove default button padding */
-    flex-shrink: 0; /* Prevent dots from shrinking */
-}
-
-.dot-button.active {
-    background-color: var(--accent-color); /* Active dot color */
-    transform: scale(1.2); /* Slightly larger active dot */
-}
-
-.dot-button:hover:not(.active) {
-    background-color: rgba(153, 188, 133, 0.5); /* Lighter accent on hover for inactive dots */
-    transform: scale(1.1);
-}
-
-/* Contact Section */
-.contact-content {
-    display: flex;
-    gap: 40px;
-    flex-wrap: wrap;
-}
-
-.contact-info, .contact-form {
-    flex: 1;
-    min-width: 300px;
-}
-
-.contact-info p {
-    margin-bottom: 15px;
-    line-height: 1.8;
-    color: var(--text-light);
-}
-
-.contact-info ul {
+.publications-list ul {
     list-style: none;
     padding: 0;
 }
-
-.contact-info ul li {
-    margin-bottom: 10px;
-    color: var(--text-light);
+.publications-list li {
+    margin-bottom: 18px;
+    font-size: 1.08em;
+    position: relative;
+    padding-left: 18px;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin-bottom: 12px;
+    cursor: pointer;
+}
+.publications-list li::before {
+    content: '\2022';
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+    font-size: 1.2em;
+    top: 0;
+}
+.publications-list a {
+    margin-left: 25px;
+    display: block;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.publications-list a:hover {
+    color: var(--accent-color);
 }
 
-.contact-info ul li strong {
-    color: var(--heading-color);
+/* Testimonials Section */
+.testimonials-section {
+    background: var(--secondary-bg);
+    padding: 64px 0 32px 0;
 }
-
-.social-links {
-    margin-top: 20px;
-    display: flex; /* Make social links flex for better alignment */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 32px;
+    justify-content: center;
+    align-items: stretch;
+    margin-top: 32px;
+}
+.testimonial-card-modern {
+    background: var(--card-bg);
+    border-radius: 18px;
+    box-shadow: 0 6px 32px rgba(0,0,0,0.1);
+    border: 2px solid var(--accent-color);
+    padding: 36px 28px 28px 28px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 15px; /* Space between icons */
+    text-align: center;
+    position: relative;
+    transition: box-shadow 0.3s, transform 0.2s;
+}
+.testimonial-card-modern:hover {
+    box-shadow: 0 12px 40px rgba(255, 214, 186, 0.3);
+    transform: translateY(-4px) scale(1.03);
+}
+.testimonial-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    color: var(--text-dark);
+    margin-bottom: 18px;
+    box-shadow: 0 2px 8px rgba(255, 214, 186, 0.3);
+}
+.testimonial-quote {
+    font-size: 1.18em;
+    font-style: italic;
+    color: var(--text-color);
+    margin-bottom: 1.2em;
+    position: relative;
+    padding: 0 10px;
+}
+.testimonial-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    align-items: center;
+}
+.testimonial-author {
+    font-weight: 700;
+    color: var(--heading-color);
+    margin-top: 10px;
+}
+.testimonial-company {
+    font-size: 0.98em;
+    color: var(--accent-color);
 }
 
+/* Contact Section */
+.contact-section {
+    background: var(--primary-bg);
+    padding: 64px 0 32px 0;
+}
+.contact-flex {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+.contact-info-card, .contact-form-card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+    padding: 40px 36px;
+    min-width: 320px;
+    max-width: 420px;
+    border: 2px solid var(--accent-color);
+    margin-bottom: 16px;
+}
+.contact-info-card h3, .contact-form-card h3 {
+    margin-top: 0;
+    color: var(--accent-color);
+    font-size: 1.3em;
+}
+.contact-info-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 18px 0;
+    font-size: 1.08em;
+}
+.contact-info-card ul li {
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+.contact-info-card ul li i {
+    margin-right: 8px;
+    color: var(--accent-color);
+    width: 16px;
+}
+
+/* Enhanced Social Links */
+.social-links {
+    display: flex;
+    gap: 16px;
+    margin-top: 18px;
+}
 .social-links a {
+    width: 45px;
+    height: 45px;
+    background: var(--accent-color);
+    color: var(--text-dark);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3em;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+.social-links a:hover {
+    background: var(--heading-color);
+    color: var(--card-bg);
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 5px 15px rgba(139, 69, 19, 0.3);
+}
+
+/* Enhanced Form Styling */
+.feedback-form-modern form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+.feedback-form-modern .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 0;
+}
+.feedback-form-modern label {
+    font-weight: 600;
+    color: var(--accent-color);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.feedback-form-modern label i {
+    margin-right: 8px;
+    color: var(--accent-color);
+}
+.feedback-form-modern input,
+.feedback-form-modern textarea {
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-size: 1.08em;
+    background: var(--secondary-bg);
+    color: var(--text-color);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+.feedback-form-modern input:focus,
+.feedback-form-modern textarea:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(255, 214, 186, 0.2);
+    outline: none;
+    transform: translateY(-2px);
+}
+.feedback-form-modern textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+.feedback-form-modern button {
+    margin-top: 8px;
+    font-size: 1.1em;
+    font-weight: 700;
+}
+.feedback-form-modern button i {
+    margin-right: 8px;
+}
+
+/* Floating Back to Top Button */
+.back-to-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--accent-color);
+    color: var(--text-dark);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2em;
+    box-shadow: 0 4px 20px rgba(255, 214, 186, 0.4);
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    z-index: 1000;
+}
+.back-to-top-btn.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.back-to-top-btn:hover {
+    background: var(--heading-color);
+    color: var(--card-bg);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(139, 69, 19, 0.4);
+}
+
+/* Floating WhatsApp Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    width: 60px;
+    height: 60px;
+    background: #25d366;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
     font-size: 1.8em;
-    color: var(--heading-color);
-    transition: transform 0.3s ease, filter 0.3s ease;
-    display: flex; /* Ensure images are treated as flex items */
+    box-shadow: 0 4px 20px rgba(37,211,102,0.3);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+.whatsapp-float:hover {
+    background: #128c7e;
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(37,211,102,0.4);
+}
+
+/* Practice Area Details Modal */
+.practice-details {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 242, 235, 0.95);
+    z-index: 2000;
+    overflow-y: auto;
+}
+.practice-details.active {
+    display: flex;
     align-items: center;
     justify-content: center;
 }
-
-.social-links a img {
-    filter: invert(0) saturate(0) brightness(0) contrast(100%); /* Keeps original black if needed, or remove if icon source is already black */
-    transition: filter 0.3s ease;
-}
-
-.social-links a:hover {
-    transform: translateY(-3px);
-}
-
-.social-links a:hover img {
-    filter: invert(45%) sepia(30%) saturate(600%) hue-rotate(80deg) brightness(95%) contrast(90%); /* Changes to accent color on hover */
-}
-
-
-.contact-form label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 500;
-    color: var(--heading-color);
-}
-
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 20px;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    background-color: var(--secondary-bg);
-    color: var(--text-light);
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1em;
-    box-sizing: border-box; /* Include padding in width */
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.contact-form input[type="text"]:focus,
-.contact-form input[type="email"]:focus,
-.contact-form textarea:focus {
-    border-color: var(--accent-color);
-    outline: none;
-    box-shadow: 0 0 0 2px rgba(153, 188, 133, 0.2); /* Accent color glow */
-}
-
-.contact-form textarea {
-    resize: vertical;
-    min-height: 120px;
-}
-
-.contact-form .btn {
-    width: 100%;
-}
-
-/* Footer */
-footer {
-    background-color: var(--secondary-bg);
-    color: var(--text-light);
-    text-align: center;
-    padding: 40px 0 20px;
-    border-top: 1px solid var(--border-color);
-    font-size: 0.9em;
+.practice-details-content {
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 800px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    border: 3px solid var(--accent-color);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
     position: relative;
-    z-index: 1;
 }
-
-footer p {
-    margin: 0;
+.practice-details-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--accent-color);
+    color: var(--text-dark);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.practice-details-close:hover {
+    background: var(--heading-color);
+    color: var(--card-bg);
+    transform: scale(1.1);
+}
+.practice-details h2 {
+    color: var(--heading-color);
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+.practice-details h3 {
+    color: var(--accent-color);
+    margin: 20px 0 10px 0;
+    font-size: 1.3em;
+}
+.practice-details p, .practice-details li {
+    color: var(--text-color);
+    line-height: 1.6;
     margin-bottom: 10px;
 }
-
-footer .footer-links a {
-    color: var(--text-light);
-    margin: 0 15px;
-    transition: color 0.3s ease;
+.practice-details ul {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+.practice-description {
+    font-size: 1.1em;
+    font-style: italic;
+    color: var(--text-color);
+    margin-bottom: 25px;
+    padding: 15px;
+    background: rgba(255, 214, 186, 0.1);
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-color);
+}
+.practice-cta {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(255, 214, 186, 0.1);
+    border-radius: 12px;
+    border: 2px solid var(--accent-color);
 }
 
-footer .footer-links a:hover {
+/* Publication Preview Modal */
+.publication-preview {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 242, 235, 0.95);
+    z-index: 2000;
+    overflow-y: auto;
+}
+.publication-preview.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.publication-preview-content {
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 900px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    border: 3px solid var(--accent-color);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    position: relative;
+}
+.publication-preview-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--accent-color);
+    color: var(--text-dark);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.publication-preview-close:hover {
+    background: var(--heading-color);
+    color: var(--card-bg);
+    transform: scale(1.1);
+}
+.publication-preview h2 {
+    color: var(--heading-color);
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+.publication-preview h3 {
     color: var(--accent-color);
+    margin: 20px 0 10px 0;
+    font-size: 1.2em;
+}
+.publication-preview p {
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+.publication-journal {
+    color: var(--accent-color);
+    font-style: italic;
+    margin-bottom: 20px;
+    padding: 10px;
+    background: rgba(255, 214, 186, 0.1);
+    border-radius: 6px;
+}
+.publication-cta {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(255, 214, 186, 0.1);
+    border-radius: 12px;
+    border: 2px solid var(--accent-color);
+}
+
+/* Enhanced Footer */
+.main-footer {
+    background: var(--secondary-bg);
+    padding: 32px 0 16px 0;
+    border-top: 2px solid var(--accent-color);
+}
+.footer-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.footer-brand .logo {
+    font-size: 1.3em;
+    color: var(--heading-color);
+}
+.footer-brand p {
+    color: var(--text-color);
+}
+.footer-links {
+    display: flex;
+    gap: 24px;
+}
+.footer-links a {
+    color: var(--accent-color);
+    font-weight: 500;
+    transition: color 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+.footer-links a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -100%;
+    width: 100%;
+    height: 1px;
+    background: var(--accent-color);
+    transition: left 0.3s ease;
+}
+.footer-links a:hover::before {
+    left: 0;
+}
+.footer-links a:hover {
+    color: var(--heading-color);
 }
 
 /* Animations */
@@ -800,66 +1039,26 @@ footer .footer-links a:hover {
 }
 
 /* --- Modern Testimonials Grid --- */
-.testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-    gap: 32px;
-    justify-content: center;
-    align-items: stretch;
-    margin-top: 32px;
-}
 .testimonial-card-modern {
-    background: #fff;
-    border-radius: 18px;
-    box-shadow: 0 6px 32px rgba(197,157,95,0.08), 0 1.5px 8px rgba(13,24,54,0.06);
-    border: 1.5px solid var(--accent-color);
-    padding: 36px 28px 28px 28px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
     position: relative;
-    transition: box-shadow 0.3s, transform 0.2s;
+    overflow: hidden;
 }
-.testimonial-card-modern:hover {
-    box-shadow: 0 12px 40px rgba(197,157,95,0.15), 0 2px 12px rgba(13,24,54,0.10);
-    transform: translateY(-4px) scale(1.03);
+.testimonial-card-modern::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 30px 30px 0;
+    border-color: transparent var(--accent-color) transparent transparent;
+    opacity: 0.1;
+    transition: all 0.3s ease;
 }
-.testimonial-avatar {
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    background: var(--accent-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2em;
-    color: #fff;
-    margin-bottom: 18px;
-    box-shadow: 0 2px 8px rgba(197,157,95,0.10);
-}
-.testimonial-quote {
-    font-size: 1.18em;
-    font-style: italic;
-    color: var(--text-light);
-    margin-bottom: 1.2em;
-    position: relative;
-    padding: 0 10px;
-}
-.testimonial-meta {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    align-items: center;
-}
-.testimonial-author {
-    font-weight: 700;
-    color: var(--heading-color);
-    margin-top: 10px;
-}
-.testimonial-company {
-    font-size: 0.98em;
-    color: var(--accent-color);
+.testimonial-card-modern:hover::after {
+    opacity: 0.3;
+    transform: scale(1.1);
 }
 
 /* --- Modern Feedback Form --- */
@@ -977,18 +1176,6 @@ footer .footer-links a:hover {
 .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
-}
-
-/* --- Professional Practice Icons --- */
-.practice-icon {
-    font-size: 2.5em;
-    color: var(--accent-color);
-    margin-bottom: 20px;
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-.practice-card:hover .practice-icon {
-    transform: scale(1.1) rotate(5deg);
-    color: var(--heading-color);
 }
 
 /* --- Floating Back to Top Button --- */
@@ -1474,7 +1661,7 @@ footer .footer-links a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(74, 16, 42, 0.95);
+    background: rgba(255, 242, 235, 0.95);
     z-index: 2000;
     overflow-y: auto;
 }
@@ -1492,7 +1679,7 @@ footer .footer-links a:hover {
     max-height: 80vh;
     overflow-y: auto;
     border: 3px solid var(--accent-color);
-    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
     position: relative;
 }
 .practice-details-close {
@@ -1500,7 +1687,7 @@ footer .footer-links a:hover {
     top: 20px;
     right: 20px;
     background: var(--accent-color);
-    color: var(--text-light);
+    color: var(--text-dark);
     border: none;
     border-radius: 50%;
     width: 40px;
@@ -1511,7 +1698,7 @@ footer .footer-links a:hover {
 }
 .practice-details-close:hover {
     background: var(--heading-color);
-    color: var(--text-dark);
+    color: var(--card-bg);
     transform: scale(1.1);
 }
 .practice-details h2 {
@@ -1525,7 +1712,7 @@ footer .footer-links a:hover {
     font-size: 1.3em;
 }
 .practice-details p, .practice-details li {
-    color: var(--text-light);
+    color: var(--text-color);
     line-height: 1.6;
     margin-bottom: 10px;
 }
@@ -1536,10 +1723,10 @@ footer .footer-links a:hover {
 .practice-description {
     font-size: 1.1em;
     font-style: italic;
-    color: var(--text-light);
+    color: var(--text-color);
     margin-bottom: 25px;
     padding: 15px;
-    background: rgba(197, 23, 46, 0.1);
+    background: rgba(255, 214, 186, 0.1);
     border-radius: 8px;
     border-left: 4px solid var(--accent-color);
 }
@@ -1547,9 +1734,9 @@ footer .footer-links a:hover {
     text-align: center;
     margin-top: 30px;
     padding: 20px;
-    background: rgba(252, 242, 89, 0.1);
+    background: rgba(255, 214, 186, 0.1);
     border-radius: 12px;
-    border: 2px solid var(--heading-color);
+    border: 2px solid var(--accent-color);
 }
 
 /* --- Publication Preview Modal --- */
@@ -1560,7 +1747,7 @@ footer .footer-links a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(74, 16, 42, 0.95);
+    background: rgba(255, 242, 235, 0.95);
     z-index: 2000;
     overflow-y: auto;
 }
@@ -1578,7 +1765,7 @@ footer .footer-links a:hover {
     max-height: 80vh;
     overflow-y: auto;
     border: 3px solid var(--accent-color);
-    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
     position: relative;
 }
 .publication-preview-close {
@@ -1586,7 +1773,7 @@ footer .footer-links a:hover {
     top: 20px;
     right: 20px;
     background: var(--accent-color);
-    color: var(--text-light);
+    color: var(--text-dark);
     border: none;
     border-radius: 50%;
     width: 40px;
@@ -1597,7 +1784,7 @@ footer .footer-links a:hover {
 }
 .publication-preview-close:hover {
     background: var(--heading-color);
-    color: var(--text-dark);
+    color: var(--card-bg);
     transform: scale(1.1);
 }
 .publication-preview h2 {
@@ -1611,7 +1798,7 @@ footer .footer-links a:hover {
     font-size: 1.2em;
 }
 .publication-preview p {
-    color: var(--text-light);
+    color: var(--text-color);
     line-height: 1.6;
     margin-bottom: 15px;
 }
@@ -1620,23 +1807,23 @@ footer .footer-links a:hover {
     font-style: italic;
     margin-bottom: 20px;
     padding: 10px;
-    background: rgba(197, 23, 46, 0.1);
+    background: rgba(255, 214, 186, 0.1);
     border-radius: 6px;
 }
 .publication-cta {
     text-align: center;
     margin-top: 30px;
     padding: 20px;
-    background: rgba(252, 242, 89, 0.1);
+    background: rgba(255, 214, 186, 0.1);
     border-radius: 12px;
-    border: 2px solid var(--heading-color);
+    border: 2px solid var(--accent-color);
 }
 
 /* --- Practice Card Footer --- */
 .practice-card-footer {
     margin-top: 20px;
     padding-top: 15px;
-    border-top: 1px solid rgba(197, 23, 46, 0.3);
+    border-top: 1px solid rgba(255, 214, 186, 0.3);
 }
 .click-hint {
     color: var(--accent-color);
@@ -1697,20 +1884,20 @@ footer .footer-links a:hover {
     padding: 12px 14px;
     font-size: 1.08em;
     background: var(--secondary-bg);
-    color: var(--text-light);
+    color: var(--text-color);
     transition: all 0.3s ease;
 }
 .enhanced-form input:focus,
 .enhanced-form textarea:focus,
 .enhanced-form select:focus {
     border-color: var(--accent-color);
-    box-shadow: 0 0 0 3px rgba(197, 23, 46, 0.2);
+    box-shadow: 0 0 0 3px rgba(255, 214, 186, 0.2);
     outline: none;
     transform: translateY(-2px);
 }
 .enhanced-form input::placeholder,
 .enhanced-form textarea::placeholder {
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(74, 74, 74, 0.6);
 }
 .enhanced-form textarea {
     min-height: 120px;
@@ -1721,7 +1908,7 @@ footer .footer-links a:hover {
 }
 .enhanced-form select option {
     background: var(--secondary-bg);
-    color: var(--text-light);
+    color: var(--text-color);
 }
 
 /* --- Checkbox Styling --- */
@@ -1760,7 +1947,7 @@ footer .footer-links a:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: var(--text-light);
+    color: var(--text-dark);
     font-size: 0.8em;
 }
 
@@ -1829,7 +2016,7 @@ footer .footer-links a:hover {
 .publications-list li a {
     margin-left: 25px;
     display: block;
-    color: var(--text-light);
+    color: var(--text-color);
     text-decoration: none;
     transition: color 0.3s ease;
 }
