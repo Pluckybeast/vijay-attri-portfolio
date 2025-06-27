@@ -1,3 +1,6 @@
+/* Import Fonts for Logo */
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Source+Serif+Pro:wght@400;600;700&display=swap');
+
 :root {
     /* Modern Lawyer Website Color Palette */
     --primary-color: #1e3a8a; /* Deep Professional Blue */
@@ -46,6 +49,7 @@
     /* Typography */
     --font-primary: 'Montserrat', sans-serif;
     --font-secondary: 'Playfair Display', serif;
+    --font-logo: 'Crimson Text', serif;
     
     /* Spacing */
     --section-padding: 80px 0;
@@ -226,14 +230,17 @@ p {
     padding: 1rem 0;
 }
 
+/* Enhanced Logo with Book Design */
 .logo {
-    font-family: var(--font-secondary);
+    font-family: var(--font-logo);
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--primary-color);
     text-decoration: none;
     transition: all var(--transition-normal);
     position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .logo::after {
@@ -254,6 +261,119 @@ p {
 .logo:hover {
     color: var(--accent-color);
     transform: translateY(-1px);
+}
+
+/* Book Logo Container */
+.book-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all var(--transition-normal);
+}
+
+.logo:hover .book-logo {
+    transform: scale(1.02);
+}
+
+/* Book Icon */
+.book-icon {
+    width: 50px;
+    height: 60px;
+    position: relative;
+    transition: all var(--transition-normal);
+}
+
+.logo:hover .book-icon {
+    transform: rotate(-2deg);
+}
+
+/* Book Design */
+.book {
+    width: 40px;
+    height: 50px;
+    background: linear-gradient(90deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    border-radius: 4px;
+    position: relative;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    transition: all var(--transition-normal);
+}
+
+.logo:hover .book {
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+}
+
+/* Book Spine */
+.book-spine {
+    width: 6px;
+    height: 50px;
+    background: linear-gradient(180deg, var(--gray-800) 0%, var(--primary-color) 100%);
+    position: absolute;
+    left: 0;
+    border-radius: 4px 0 0 4px;
+}
+
+/* Book Pages */
+.book-pages {
+    position: absolute;
+    right: 3px;
+    top: 10px;
+    width: 25px;
+    height: 2px;
+    background: var(--white);
+    border-radius: 1px;
+    box-shadow: 
+        0 6px 0 var(--white), 
+        0 12px 0 var(--white), 
+        0 18px 0 var(--white), 
+        0 24px 0 var(--white);
+    transition: all var(--transition-normal);
+}
+
+.logo:hover .book-pages {
+    box-shadow: 
+        0 6px 0 var(--white), 
+        0 12px 0 var(--white), 
+        0 18px 0 var(--white), 
+        0 24px 0 var(--white),
+        0 30px 0 var(--white);
+}
+
+/* Logo Text */
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1;
+}
+
+.logo-text h2 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 0;
+    letter-spacing: 0.5px;
+    font-family: var(--font-logo);
+    transition: color var(--transition-normal);
+}
+
+.logo:hover .logo-text h2 {
+    color: var(--accent-color);
+}
+
+.logo-text p {
+    font-size: 10px;
+    color: var(--text-muted);
+    margin: 2px 0 0 0;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-family: var(--font-logo);
+    transition: color var(--transition-normal);
+}
+
+.logo:hover .logo-text p {
+    color: var(--accent-color);
 }
 
 .nav-links {
@@ -1693,6 +1813,47 @@ p {
         flex-direction: column;
         text-align: center;
     }
+
+    .book-logo {
+        gap: 8px;
+    }
+    
+    .book-icon {
+        width: 40px;
+        height: 48px;
+    }
+    
+    .book {
+        width: 32px;
+        height: 40px;
+    }
+    
+    .book-spine {
+        width: 5px;
+        height: 40px;
+    }
+    
+    .book-pages {
+        right: 2px;
+        top: 8px;
+        width: 20px;
+        height: 1.5px;
+        box-shadow: 
+            0 5px 0 var(--white), 
+            0 10px 0 var(--white), 
+            0 15px 0 var(--white), 
+            0 20px 0 var(--white);
+    }
+    
+    .logo-text h2 {
+        font-size: 16px;
+        letter-spacing: 0.3px;
+    }
+    
+    .logo-text p {
+        font-size: 9px;
+        letter-spacing: 1px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1718,5 +1879,46 @@ p {
 
     .testimonials-grid {
         grid-template-columns: 1fr;
+    }
+
+    .book-logo {
+        gap: 6px;
+    }
+    
+    .book-icon {
+        width: 35px;
+        height: 42px;
+    }
+    
+    .book {
+        width: 28px;
+        height: 35px;
+    }
+    
+    .book-spine {
+        width: 4px;
+        height: 35px;
+    }
+    
+    .book-pages {
+        right: 2px;
+        top: 7px;
+        width: 18px;
+        height: 1px;
+        box-shadow: 
+            0 4px 0 var(--white), 
+            0 8px 0 var(--white), 
+            0 12px 0 var(--white), 
+            0 16px 0 var(--white);
+    }
+    
+    .logo-text h2 {
+        font-size: 14px;
+        letter-spacing: 0.2px;
+    }
+    
+    .logo-text p {
+        font-size: 8px;
+        letter-spacing: 0.8px;
     }
 }
