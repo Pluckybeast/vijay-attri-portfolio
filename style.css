@@ -1,18 +1,18 @@
 :root {
-    --primary-bg: #fff7d1; /* Light Yellow - Main background */
-    --secondary-bg: #ffecc8; /* Warm Cream - Background for cards, sections */
-    --text-color: #8b5a3c; /* Dark Brown - For general text */
-    --heading-color: #5d3a1f; /* Darker Brown - For headings */
-    --accent-color: #ffb0b0; /* Coral Pink - For buttons, links, highlights */
-    --border-color: #ffd09b; /* Peach - For subtle borders, lines */
+    --primary-bg: #f2f2f2; /* Light Gray - Main background */
+    --secondary-bg: #eae4d5; /* Warm Beige - Background for cards, sections */
+    --text-color: #000000; /* Black - For general text */
+    --heading-color: #000000; /* Black - For headings */
+    --accent-color: #b6b09f; /* Muted Brown - For buttons, links, highlights */
+    --border-color: #b6b09f; /* Muted Brown - For subtle borders, lines */
     --card-bg: #ffffff; /* White - Card backgrounds */
-    --nav-link-hover: rgba(255, 176, 176, 0.2);
-    --gradient-start: #fff7d1;
-    --gradient-end: #ffecc8;
-    --testimonial-section-bg: #ffecc8;
-    --highlight-color: #ffb0b0; /* Coral Pink for highlights */
-    --text-light: #8b5a3c; /* Dark Brown text for light backgrounds */
-    --text-dark: #5d3a1f; /* Darker text for emphasis */
+    --nav-link-hover: rgba(182, 176, 159, 0.2);
+    --gradient-start: #f2f2f2;
+    --gradient-end: #eae4d5;
+    --testimonial-section-bg: #eae4d5;
+    --highlight-color: #b6b09f; /* Muted Brown for highlights */
+    --text-light: #000000; /* Black text for light backgrounds */
+    --text-dark: #000000; /* Black text for emphasis */
 }
 
 body {
@@ -86,7 +86,7 @@ a {
     width: 100%;
     z-index: 1000;
     padding: 15px 0;
-    background: rgba(255, 247, 209, 0.95); /* Light Yellow with transparency */
+    background: rgba(242, 242, 242, 0.95); /* Light Gray with transparency */
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -119,7 +119,7 @@ a {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 176, 176, 0.1), transparent);
+    background: linear-gradient(90deg, transparent, rgba(182, 176, 159, 0.1), transparent);
     transition: left 0.6s ease;
 }
 
@@ -241,12 +241,14 @@ a {
 }
 
 @keyframes glow {
-    0%, 100% { box-shadow: 0 0 10px rgba(255, 176, 176, 0.1); }
-    50% { box-shadow: 0 0 20px rgba(255, 176, 176, 0.2); }
+    0%, 100% { box-shadow: 0 0 10px rgba(182, 176, 159, 0.1); }
+    50% { box-shadow: 0 0 20px rgba(182, 176, 159, 0.2); }
 }
 
 .logo-container:hover {
     animation: glow 2s ease-in-out infinite;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 6px rgba(182, 176, 159, 0.3);
 }
 
 /* Mobile responsive adjustments for logo */
@@ -404,29 +406,29 @@ a {
     color: var(--text-color);
 }
 
-.btn,
-.btn-primary {
+.btn {
     display: inline-block;
-    padding: 14px 36px;
-    background-color: var(--accent-color);
-    color: var(--text-dark);
-    border-radius: 8px;
+    padding: 14px 32px;
+    background: linear-gradient(135deg, var(--accent-color), var(--border-color));
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
     font-weight: 600;
     font-size: 1.1em;
+    transition: all 0.3s ease;
     border: none;
     cursor: pointer;
-    transition: background 0.3s, transform 0.2s;
-    box-shadow: 0 5px 15px rgba(255, 214, 186, 0.3);
-    text-align: center;
+    box-shadow: 0 5px 15px rgba(182, 176, 159, 0.3);
 }
+
 .btn-primary:hover {
-    background: linear-gradient(135deg, #ffb0b0, #ffd09b);
+    background: linear-gradient(135deg, var(--accent-color), var(--border-color));
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(255, 176, 176, 0.4);
+    box-shadow: 0 8px 25px rgba(182, 176, 159, 0.4);
 }
 .btn-primary:active {
     transform: translateY(0);
-    box-shadow: 0 4px 15px rgba(255, 176, 176, 0.3);
+    box-shadow: 0 4px 15px rgba(182, 176, 159, 0.3);
 }
 
 /* Section Headers */
@@ -551,7 +553,7 @@ a {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 176, 176, 0.1), transparent);
+    background: linear-gradient(90deg, transparent, rgba(182, 176, 159, 0.1), transparent);
     transition: left 0.5s ease;
 }
 .practice-card:hover::before {
@@ -559,7 +561,7 @@ a {
 }
 .practice-card:hover {
     transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 15px 40px rgba(255, 176, 176, 0.3);
+    box-shadow: 0 15px 40px rgba(182, 176, 159, 0.3);
     border-color: var(--heading-color);
 }
 .practice-card h3 {
@@ -674,17 +676,18 @@ section h2::after {
 }
 .testimonial-card-modern {
     background: var(--card-bg);
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 8px 30px rgba(255, 176, 176, 0.15);
-    border: 1px solid var(--border-color);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(182, 176, 159, 0.15);
+    padding: 32px 28px;
+    text-align: center;
+    border: 2px solid var(--accent-color);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
     overflow: hidden;
 }
 .testimonial-card-modern:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(255, 176, 176, 0.25);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(182, 176, 159, 0.25);
 }
 .testimonial-avatar {
     width: 60px;
@@ -815,8 +818,9 @@ section h2::after {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .social-links a:hover {
+    background: var(--heading-color);
     transform: translateY(-3px) scale(1.1);
-    box-shadow: 0 8px 20px rgba(255, 176, 176, 0.4);
+    box-shadow: 0 8px 20px rgba(182, 176, 159, 0.4);
 }
 
 /* Enhanced Form Styling */
@@ -868,14 +872,13 @@ section h2::after {
 .enhanced-form input:focus,
 .enhanced-form textarea:focus,
 .enhanced-form select:focus {
-    border-color: var(--accent-color);
-    box-shadow: 0 0 0 3px rgba(255, 176, 176, 0.2);
     outline: none;
-    transform: translateY(-2px);
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(182, 176, 159, 0.2);
 }
 .enhanced-form input::placeholder,
 .enhanced-form textarea::placeholder {
-    color: rgba(139, 90, 60, 0.6);
+    color: rgba(0, 0, 0, 0.6);
 }
 .enhanced-form textarea {
     min-height: 120px;
@@ -910,7 +913,7 @@ section h2::after {
     transform: translateY(20px);
     transition: all 0.3s ease;
     z-index: 1000;
-    box-shadow: 0 4px 15px rgba(255, 176, 176, 0.3);
+    box-shadow: 0 4px 15px rgba(182, 176, 159, 0.3);
 }
 .back-to-top-btn.show {
     opacity: 1;
@@ -920,7 +923,7 @@ section h2::after {
 .back-to-top-btn:hover {
     background: var(--heading-color);
     transform: translateY(-3px);
-    box-shadow: 0 6px 25px rgba(139, 69, 19, 0.4);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
 }
 
 /* Floating WhatsApp Button */
@@ -950,15 +953,21 @@ section h2::after {
 
 /* Practice Area Details Modal */
 .practice-details {
-    display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 247, 209, 0.95);
+    background: rgba(242, 242, 242, 0.95);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     z-index: 2000;
-    overflow-y: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
 }
 .practice-details.active {
     display: flex;
@@ -967,15 +976,14 @@ section h2::after {
 }
 .practice-details-content {
     background: var(--card-bg);
-    border-radius: 20px;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
     padding: 40px;
     max-width: 800px;
-    width: 90%;
     max-height: 80vh;
     overflow-y: auto;
-    border: 3px solid var(--accent-color);
-    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
     position: relative;
+    border: 2px solid var(--accent-color);
 }
 .practice-details-close {
     position: absolute;
@@ -1036,15 +1044,21 @@ section h2::after {
 
 /* Publication Preview Modal */
 .publication-preview {
-    display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 247, 209, 0.95);
+    background: rgba(242, 242, 242, 0.95);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     z-index: 2000;
-    overflow-y: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
 }
 .publication-preview.active {
     display: flex;
@@ -1102,14 +1116,14 @@ section h2::after {
     font-style: italic;
     margin-bottom: 20px;
     padding: 10px;
-    background: rgba(255, 176, 176, 0.1);
+    background: rgba(182, 176, 159, 0.1);
     border-radius: 6px;
 }
 .publication-cta {
     text-align: center;
     margin-top: 30px;
     padding: 20px;
-    background: rgba(255, 214, 186, 0.1);
+    background: rgba(182, 176, 159, 0.1);
     border-radius: 12px;
     border: 2px solid var(--accent-color);
 }
@@ -1447,7 +1461,7 @@ section h2::after {
     text-shadow: 0 2px 12px rgba(13,24,54,0.25);
 }
 .hero-section.hero-bg.hero-bg-image p {
-    color: #f7f8fa;
+    color: #ffffff;
     text-shadow: 0 1px 8px rgba(13,24,54,0.18);
 }
 .hero-section.hero-bg.hero-bg-image .btn-primary {
@@ -1494,7 +1508,7 @@ section h2::after {
     transform: translateY(20px);
     transition: all 0.3s ease;
     z-index: 1000;
-    box-shadow: 0 4px 15px rgba(255, 176, 176, 0.3);
+    box-shadow: 0 4px 15px rgba(182, 176, 159, 0.3);
 }
 .back-to-top-btn.show {
     opacity: 1;
@@ -1504,7 +1518,7 @@ section h2::after {
 .back-to-top-btn:hover {
     background: var(--heading-color);
     transform: translateY(-3px);
-    box-shadow: 0 6px 25px rgba(139, 69, 19, 0.4);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
 }
 
 /* --- Floating WhatsApp Button --- */
@@ -1545,7 +1559,7 @@ section h2::after {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 176, 176, 0.1), transparent);
+    background: linear-gradient(90deg, transparent, rgba(182, 176, 159, 0.1), transparent);
     transition: left 0.5s ease;
 }
 .practice-card:hover::before {
@@ -1553,7 +1567,7 @@ section h2::after {
 }
 .practice-card:hover {
     transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 15px 40px rgba(255, 176, 176, 0.3);
+    box-shadow: 0 15px 40px rgba(182, 176, 159, 0.3);
     border-color: var(--heading-color);
 }
 
@@ -1597,7 +1611,7 @@ section h2::after {
 .social-links a:hover {
     background: var(--heading-color);
     transform: translateY(-3px) scale(1.1);
-    box-shadow: 0 5px 15px rgba(197,157,95,0.3);
+    box-shadow: 0 8px 20px rgba(182, 176, 159, 0.4);
 }
 
 /* --- Enhanced Form Styling --- */
@@ -1953,15 +1967,21 @@ section h2::after {
 
 /* --- Practice Area Details Modal --- */
 .practice-details {
-    display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 247, 209, 0.95);
+    background: rgba(242, 242, 242, 0.95);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     z-index: 2000;
-    overflow-y: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
 }
 .practice-details.active {
     display: flex;
@@ -1970,6 +1990,7 @@ section h2::after {
 }
 .practice-details-content {
     background: var(--card-bg);
+    border-radius: 16px;
     border-radius: 20px;
     padding: 40px;
     max-width: 800px;
@@ -2105,14 +2126,14 @@ section h2::after {
     font-style: italic;
     margin-bottom: 20px;
     padding: 10px;
-    background: rgba(255, 176, 176, 0.1);
+    background: rgba(182, 176, 159, 0.1);
     border-radius: 6px;
 }
 .publication-cta {
     text-align: center;
     margin-top: 30px;
     padding: 20px;
-    background: rgba(255, 214, 186, 0.1);
+    background: rgba(182, 176, 159, 0.1);
     border-radius: 12px;
     border: 2px solid var(--accent-color);
 }
@@ -2121,7 +2142,7 @@ section h2::after {
 .practice-card-footer {
     margin-top: 20px;
     padding-top: 15px;
-    border-top: 1px solid rgba(255, 176, 176, 0.3);
+    border-top: 1px solid rgba(182, 176, 159, 0.3);
 }
 .click-hint {
     color: var(--accent-color);
@@ -2188,14 +2209,13 @@ section h2::after {
 .enhanced-form input:focus,
 .enhanced-form textarea:focus,
 .enhanced-form select:focus {
-    border-color: var(--accent-color);
-    box-shadow: 0 0 0 3px rgba(255, 176, 176, 0.2);
     outline: none;
-    transform: translateY(-2px);
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(182, 176, 159, 0.2);
 }
 .enhanced-form input::placeholder,
 .enhanced-form textarea::placeholder {
-    color: rgba(139, 90, 60, 0.6);
+    color: rgba(0, 0, 0, 0.6);
 }
 .enhanced-form textarea {
     min-height: 120px;
