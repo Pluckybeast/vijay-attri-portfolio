@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4d6.png">
 </head>
 <body>
     <header class="main-header">
@@ -111,49 +112,55 @@
                         <i class="fas fa-gavel practice-icon"></i>
                         <h3>Criminal Law</h3>
                         <p>Defense for criminal charges, ensuring protection of rights and fair process.</p>
-                        <div class="click-hint">Learn More</div>
+                        <button class="btn btn-primary learn-more-btn" onclick="openPracticeDetails('criminal'); event.stopPropagation();">Learn More</button>
                     </div>
                     <div class="practice-card interactive-element" tabindex="0" onclick="openPracticeDetails('corporate')">
                         <i class="fas fa-building practice-icon"></i>
                         <h3>Corporate Law</h3>
                         <p>Legal guidance for businesses on compliance, contracts, mergers, and governance.</p>
-                        <div class="click-hint">Learn More</div>
+                        <button class="btn btn-primary learn-more-btn" onclick="openPracticeDetails('corporate'); event.stopPropagation();">Learn More</button>
                     </div>
                     <div class="practice-card interactive-element" tabindex="0" onclick="openPracticeDetails('civil')">
                         <i class="fas fa-balance-scale practice-icon"></i>
                         <h3>Civil Litigation</h3>
                         <p>Representation in civil disputes, property matters, and contract breaches.</p>
-                        <div class="click-hint">Learn More</div>
+                        <button class="btn btn-primary learn-more-btn" onclick="openPracticeDetails('civil'); event.stopPropagation();">Learn More</button>
                     </div>
                     <div class="practice-card interactive-element" tabindex="0" onclick="openPracticeDetails('contract')">
                         <i class="fas fa-file-contract practice-icon"></i>
                         <h3>Contract Drafting</h3>
                         <p>Drafting and review of business, employment, and real estate contracts.</p>
-                        <div class="click-hint">Learn More</div>
+                        <button class="btn btn-primary learn-more-btn" onclick="openPracticeDetails('contract'); event.stopPropagation();">Learn More</button>
                     </div>
                     <div class="practice-card interactive-element" tabindex="0" onclick="openPracticeDetails('adr')">
                         <i class="fas fa-handshake practice-icon"></i>
                         <h3>Alternative Dispute Resolution</h3>
                         <p>Mediation, arbitration, and negotiation for efficient conflict resolution.</p>
-                        <div class="click-hint">Learn More</div>
+                        <button class="btn btn-primary learn-more-btn" onclick="openPracticeDetails('adr'); event.stopPropagation();">Learn More</button>
                     </div>
                     <div class="practice-card interactive-element" tabindex="0" onclick="openPracticeDetails('ip')">
                         <i class="fas fa-lightbulb practice-icon"></i>
                         <h3>Intellectual Property</h3>
                         <p>Protection of innovations, trademarks, copyrights, and other IP assets.</p>
-                        <div class="click-hint">Learn More</div>
+                        <button class="btn btn-primary learn-more-btn" onclick="openPracticeDetails('ip'); event.stopPropagation();">Learn More</button>
                     </div>
                     <div class="practice-card interactive-element" tabindex="0" onclick="openPracticeDetails('real-estate')">
                         <i class="fas fa-home practice-icon"></i>
                         <h3>Real Estate Law</h3>
                         <p>Support for property transactions, disputes, and regulatory compliance.</p>
-                        <div class="click-hint">Learn More</div>
+                        <button class="btn btn-primary learn-more-btn" onclick="openPracticeDetails('real-estate'); event.stopPropagation();">Learn More</button>
                     </div>
                     <div class="practice-card interactive-element" tabindex="0" onclick="openPracticeDetails('family')">
                         <i class="fas fa-heart practice-icon"></i>
                         <h3>Family Law</h3>
                         <p>Representation in divorce, child custody, alimony, and family matters.</p>
-                        <div class="click-hint">Learn More</div>
+                        <button class="btn btn-primary learn-more-btn" onclick="openPracticeDetails('family'); event.stopPropagation();">Learn More</button>
+                    </div>
+                    <div class="practice-card interactive-element" tabindex="0" onclick="openPracticeDetails('probono')">
+                        <i class="fas fa-hands-helping practice-icon"></i>
+                        <h3>Pro Bono</h3>
+                        <p>Free legal services for those in need, supporting access to justice for all.</p>
+                        <button class="btn btn-primary learn-more-btn" onclick="openPracticeDetails('probono'); event.stopPropagation();">Learn More</button>
                     </div>
                 </div>
             </div>
@@ -777,6 +784,30 @@
                 "Document preparation and filing",
                 "Court representation and advocacy",
                 "Settlement negotiations and mediation"
+            ]
+        },
+        probono: {
+            title: "Pro Bono",
+            icon: "fas fa-hands-helping",
+            description: "Free legal services for those in need, supporting access to justice for all.",
+            services: [
+                "Pro bono representation in various legal matters",
+                "Legal advice and consultation",
+                "Community service and outreach",
+                "Collaboration with legal aid organizations"
+            ],
+            expertise: [
+                "Extensive experience in various legal fields",
+                "Strong commitment to social justice and access to justice",
+                "Ability to handle a wide range of legal issues",
+                "Effective communication and negotiation skills"
+            ],
+            process: [
+                "Initial consultation to assess suitability",
+                "Legal strategy development",
+                "Representation in court or negotiations",
+                "Follow-up and evaluation of case outcomes",
+                "Continuous learning and skill improvement"
             ]
         }
     };
