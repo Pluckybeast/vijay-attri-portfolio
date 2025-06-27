@@ -130,47 +130,53 @@ a {
     left: 100%;
 }
 
-.logo-symbol {
+.book-icon {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 50px;
     height: 50px;
-    background: linear-gradient(135deg, var(--accent-color) 0%, var(--heading-color) 100%);
-    border-radius: 12px;
     position: relative;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    overflow: hidden;
-    flex-shrink: 0;
 }
 
-.logo-symbol::before {
-    content: '';
+.book {
+    width: 42px;
+    height: 52px;
+    background: linear-gradient(90deg, var(--accent-color) 0%, var(--heading-color) 100%);
+    border-radius: 4px;
+    position: relative;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s ease;
+}
+
+.book-spine {
+    width: 6px;
+    height: 52px;
+    background: linear-gradient(180deg, var(--heading-color) 0%, var(--accent-color) 100%);
     position: absolute;
-    top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, var(--heading-color) 0%, var(--text-color) 100%);
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    border-radius: 12px;
+    border-radius: 4px 0 0 4px;
 }
 
-.logo-container:hover .logo-symbol::before {
-    opacity: 1;
+.book-pages {
+    position: absolute;
+    right: 4px;
+    top: 10px;
+    width: 28px;
+    height: 2px;
+    background: white;
+    border-radius: 1px;
+    box-shadow: 0 6px 0 white, 0 12px 0 white, 0 18px 0 white, 0 24px 0 white;
 }
 
-.scales-icon {
-    position: relative;
-    z-index: 2;
-    color: white;
-    font-size: 20px;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+.logo-container:hover .book {
+    transform: scale(1.1) rotate(2deg);
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-.logo-container:hover .scales-icon {
-    transform: scale(1.1) rotate(5deg);
+.logo-container:hover .book-pages {
+    box-shadow: 0 6px 0 white, 0 12px 0 white, 0 18px 0 white, 0 24px 0 white, 0 30px 0 white;
 }
 
 .logo-text {
@@ -261,17 +267,184 @@ a {
         padding: 6px 8px;
     }
     
-    .logo-symbol {
+    .book-icon {
         width: 40px;
         height: 40px;
     }
     
-    .scales-icon {
-        font-size: 16px;
+    .book {
+        width: 34px;
+        height: 42px;
+    }
+    
+    .book-spine {
+        width: 5px;
+        height: 42px;
+    }
+    
+    .book-pages {
+        right: 3px;
+        top: 8px;
+        width: 22px;
+        height: 1.5px;
+        box-shadow: 0 5px 0 white, 0 10px 0 white, 0 15px 0 white, 0 20px 0 white;
     }
     
     .company-name {
-        font-size: 16px;
+        font-size: 14px;
+    }
+    
+    .tagline {
+        font-size: 10px;
+    }
+    
+    .decorative-line {
+        height: 1px;
+        width: 20px;
+    }
+    
+    /* Practice Areas Grid Mobile Optimization */
+    .practice-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 0 10px;
+    }
+    
+    .practice-card {
+        padding: 20px;
+        margin-bottom: 0;
+    }
+    
+    .practice-card h3 {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+    }
+    
+    .practice-card p {
+        font-size: 0.95em;
+        line-height: 1.5;
+    }
+    
+    .practice-icon {
+        font-size: 2.2em;
+        margin-bottom: 15px;
+    }
+    
+    /* Contact Form Mobile Optimization */
+    .contact-flex {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .contact-info-card,
+    .contact-form-card {
+        padding: 20px;
+        margin-bottom: 0;
+    }
+    
+    .enhanced-form {
+        gap: 16px;
+    }
+    
+    .enhanced-form input,
+    .enhanced-form textarea,
+    .enhanced-form select {
+        padding: 10px 12px;
+        font-size: 1em;
+    }
+    
+    /* Social Links Mobile Optimization */
+    .social-links {
+        gap: 12px;
+        margin-top: 15px;
+        justify-content: center;
+    }
+    
+    .social-links a {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1em;
+        margin: 0 4px;
+    }
+    
+    /* Floating Buttons Mobile Optimization */
+    .back-to-top-btn,
+    .whatsapp-float {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1em;
+    }
+    
+    .back-to-top-btn {
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .whatsapp-float {
+        bottom: 20px;
+        left: 20px;
+    }
+    
+    /* Modal Mobile Optimization */
+    .practice-details-content,
+    .publication-preview-content {
+        width: 95%;
+        padding: 25px 20px;
+        max-height: 85vh;
+        margin: 20px;
+    }
+    
+    .practice-details h2,
+    .publication-preview h2 {
+        font-size: 1.4em;
+    }
+    
+    .practice-details h3,
+    .publication-preview h3 {
+        font-size: 1.1em;
+    }
+    
+    .practice-details-close,
+    .publication-preview-close {
+        width: 35px;
+        height: 35px;
+        font-size: 1em;
+        top: 15px;
+        right: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-container {
+        gap: 8px;
+        padding: 4px 6px;
+    }
+    
+    .book-icon {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .book {
+        width: 30px;
+        height: 37px;
+    }
+    
+    .book-spine {
+        width: 4px;
+        height: 37px;
+    }
+    
+    .book-pages {
+        right: 2px;
+        top: 6px;
+        width: 18px;
+        height: 1px;
+        box-shadow: 0 4px 0 white, 0 8px 0 white, 0 12px 0 white, 0 16px 0 white;
+    }
+    
+    .company-name {
+        font-size: 12px;
     }
     
     .tagline {
@@ -279,30 +452,198 @@ a {
     }
     
     .decorative-line {
+        height: 1px;
         width: 15px;
     }
     
-    .logo-container:hover .decorative-line {
-        width: 25px;
+    /* Extra Small Mobile Optimizations */
+    .practice-grid {
+        padding: 0 5px;
+    }
+    
+    .practice-card {
+        padding: 16px;
+    }
+    
+    .practice-card h3 {
+        font-size: 1.1em;
+    }
+    
+    .practice-card p {
+        font-size: 0.9em;
+    }
+    
+    .practice-icon {
+        font-size: 2em;
+    }
+    
+    .contact-info-card,
+    .contact-form-card {
+        padding: 16px;
+    }
+    
+    .enhanced-form input,
+    .enhanced-form textarea,
+    .enhanced-form select {
+        padding: 8px 10px;
+        font-size: 0.95em;
+    }
+    
+    .social-links a {
+        width: 35px;
+        height: 35px;
+        font-size: 1em;
+    }
+    
+    .back-to-top-btn,
+    .whatsapp-float {
+        width: 40px;
+        height: 40px;
+        font-size: 1em;
+    }
+    
+    .back-to-top-btn {
+        bottom: 15px;
+        right: 15px;
+    }
+    
+    .whatsapp-float {
+        bottom: 15px;
+        left: 15px;
+    }
+    
+    /* Modal Extra Small Mobile */
+    .practice-details-content,
+    .publication-preview-content {
+        width: 98%;
+        padding: 20px 15px;
+        margin: 10px;
+    }
+    
+    .practice-details h2,
+    .publication-preview h2 {
+        font-size: 1.3em;
+    }
+    
+    .practice-details h3,
+    .publication-preview h3 {
+        font-size: 1em;
+    }
+    
+    .click-hint,
+    .preview-hint {
+        font-size: 0.8em;
+    }
+    
+    .enhanced-submit {
+        padding: 10px 20px;
+        font-size: 0.95em;
     }
 }
 
-@media (max-width: 480px) {
-    .logo-text {
-        display: none;
+/* Tablet Responsiveness */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .practice-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
     }
     
-    .logo-container {
-        justify-content: center;
+    .contact-flex {
+        gap: 30px;
     }
     
-    .logo-symbol {
+    .contact-info-card,
+    .contact-form-card {
+        flex: 1;
+    }
+    
+    .book-icon {
         width: 45px;
         height: 45px;
     }
     
-    .scales-icon {
-        font-size: 18px;
+    .book {
+        width: 38px;
+        height: 47px;
+    }
+    
+    .book-spine {
+        width: 5px;
+        height: 47px;
+    }
+    
+    .book-pages {
+        right: 3px;
+        top: 9px;
+        width: 25px;
+        height: 1.8px;
+        box-shadow: 0 5.5px 0 white, 0 11px 0 white, 0 16.5px 0 white, 0 22px 0 white;
+    }
+}
+
+/* Large Screen Optimizations */
+@media (min-width: 1025px) {
+    .practice-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 25px;
+    }
+    
+    .book-icon {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .book {
+        width: 42px;
+        height: 52px;
+    }
+    
+    .book-spine {
+        width: 6px;
+        height: 52px;
+    }
+    
+    .book-pages {
+        right: 4px;
+        top: 10px;
+        width: 28px;
+        height: 2px;
+        box-shadow: 0 6px 0 white, 0 12px 0 white, 0 18px 0 white, 0 24px 0 white;
+    }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .practice-card:hover,
+    .testimonial-card-modern:hover,
+    .stat-card:hover,
+    .contact-info-card:hover,
+    .contact-form-card:hover {
+        transform: none;
+    }
+    
+    .practice-card:active,
+    .testimonial-card-modern:active,
+    .stat-card:active,
+    .contact-info-card:active,
+    .contact-form-card:active {
+        transform: scale(0.98);
+    }
+    
+    .social-links a:hover {
+        transform: none;
+    }
+    
+    .social-links a:active {
+        transform: scale(0.95);
+    }
+    
+    .btn:hover {
+        transform: none;
+    }
+    
+    .btn:active {
+        transform: scale(0.95);
     }
 }
 
@@ -1353,29 +1694,150 @@ section h2::after {
         padding: 6px 8px;
     }
     
-    .logo-symbol {
+    .book-icon {
         width: 40px;
         height: 40px;
     }
     
-    .scales-icon {
-        font-size: 16px;
+    .book {
+        width: 34px;
+        height: 42px;
+    }
+    
+    .book-spine {
+        width: 5px;
+        height: 42px;
+    }
+    
+    .book-pages {
+        right: 3px;
+        top: 8px;
+        width: 22px;
+        height: 1.5px;
+        box-shadow: 0 5px 0 white, 0 10px 0 white, 0 15px 0 white, 0 20px 0 white;
     }
     
     .company-name {
-        font-size: 16px;
+        font-size: 14px;
     }
     
     .tagline {
-        font-size: 9px;
+        font-size: 10px;
     }
     
     .decorative-line {
-        width: 15px;
+        height: 1px;
+        width: 20px;
     }
     
-    .logo-container:hover .decorative-line {
-        width: 25px;
+    /* Practice Areas Grid Mobile Optimization */
+    .practice-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 0 10px;
+    }
+    
+    .practice-card {
+        padding: 20px;
+        margin-bottom: 0;
+    }
+    
+    .practice-card h3 {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+    }
+    
+    .practice-card p {
+        font-size: 0.95em;
+        line-height: 1.5;
+    }
+    
+    .practice-icon {
+        font-size: 2.2em;
+        margin-bottom: 15px;
+    }
+    
+    /* Contact Form Mobile Optimization */
+    .contact-flex {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .contact-info-card,
+    .contact-form-card {
+        padding: 20px;
+        margin-bottom: 0;
+    }
+    
+    .enhanced-form {
+        gap: 16px;
+    }
+    
+    .enhanced-form input,
+    .enhanced-form textarea,
+    .enhanced-form select {
+        padding: 10px 12px;
+        font-size: 1em;
+    }
+    
+    /* Social Links Mobile Optimization */
+    .social-links {
+        gap: 12px;
+        margin-top: 15px;
+        justify-content: center;
+    }
+    
+    .social-links a {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1em;
+        margin: 0 4px;
+    }
+    
+    /* Floating Buttons Mobile Optimization */
+    .back-to-top-btn,
+    .whatsapp-float {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1em;
+    }
+    
+    .back-to-top-btn {
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .whatsapp-float {
+        bottom: 20px;
+        left: 20px;
+    }
+    
+    /* Modal Mobile Optimization */
+    .practice-details-content,
+    .publication-preview-content {
+        width: 95%;
+        padding: 25px 20px;
+        max-height: 85vh;
+        margin: 20px;
+    }
+    
+    .practice-details h2,
+    .publication-preview h2 {
+        font-size: 1.4em;
+    }
+    
+    .practice-details h3,
+    .publication-preview h3 {
+        font-size: 1.1em;
+    }
+    
+    .practice-details-close,
+    .publication-preview-close {
+        width: 35px;
+        height: 35px;
+        font-size: 1em;
+        top: 15px;
+        right: 15px;
     }
 }
 
@@ -1401,13 +1863,124 @@ section h2::after {
         justify-content: center;
     }
     
-    .logo-symbol {
-        width: 45px;
-        height: 45px;
+    .book-icon {
+        width: 35px;
+        height: 35px;
     }
     
-    .scales-icon {
-        font-size: 18px;
+    .book {
+        width: 30px;
+        height: 37px;
+    }
+    
+    .book-spine {
+        width: 4px;
+        height: 37px;
+    }
+    
+    .book-pages {
+        right: 2px;
+        top: 6px;
+        width: 18px;
+        height: 1px;
+        box-shadow: 0 4px 0 white, 0 8px 0 white, 0 12px 0 white, 0 16px 0 white;
+    }
+    
+    .company-name {
+        font-size: 12px;
+    }
+    
+    .tagline {
+        font-size: 9px;
+    }
+    
+    .decorative-line {
+        height: 1px;
+        width: 15px;
+    }
+    
+    /* Extra Small Mobile Optimizations */
+    .practice-grid {
+        padding: 0 5px;
+    }
+    
+    .practice-card {
+        padding: 16px;
+    }
+    
+    .practice-card h3 {
+        font-size: 1.1em;
+    }
+    
+    .practice-card p {
+        font-size: 0.9em;
+    }
+    
+    .practice-icon {
+        font-size: 2em;
+    }
+    
+    .contact-info-card,
+    .contact-form-card {
+        padding: 16px;
+    }
+    
+    .enhanced-form input,
+    .enhanced-form textarea,
+    .enhanced-form select {
+        padding: 8px 10px;
+        font-size: 0.95em;
+    }
+    
+    .social-links a {
+        width: 35px;
+        height: 35px;
+        font-size: 1em;
+    }
+    
+    .back-to-top-btn,
+    .whatsapp-float {
+        width: 40px;
+        height: 40px;
+        font-size: 1em;
+    }
+    
+    .back-to-top-btn {
+        bottom: 15px;
+        right: 15px;
+    }
+    
+    .whatsapp-float {
+        bottom: 15px;
+        left: 15px;
+    }
+    
+    /* Modal Extra Small Mobile */
+    .practice-details-content,
+    .publication-preview-content {
+        width: 98%;
+        padding: 20px 15px;
+        margin: 10px;
+    }
+    
+    .practice-details h2,
+    .publication-preview h2 {
+        font-size: 1.3em;
+    }
+    
+    .practice-details h3,
+    .publication-preview h3 {
+        font-size: 1em;
+    }
+    
+    .click-hint,
+    .preview-hint {
+        font-size: 0.8em;
+    }
+    
+    .enhanced-submit {
+        padding: 10px 20px;
+        font-size: 0.95em;
     }
 }
 
@@ -1953,7 +2526,7 @@ section h2::after {
         font-size: 0.8em;
     }
     .enhanced-submit {
-        padding: 12px 24px;
+        padding: 10px 24px;
         font-size: 1em;
     }
 }

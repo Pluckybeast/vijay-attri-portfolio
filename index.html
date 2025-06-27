@@ -15,7 +15,12 @@
             <div class="container nav-container">
                 <a href="#home" class="logo-container">
                     <div class="logo-symbol">
-                        <div class="scales-icon">⚖</div>
+                        <div class="book-icon">
+                            <div class="book">
+                                <div class="book-spine"></div>
+                                <div class="book-pages"></div>
+                            </div>
+                        </div>
                     </div>
                     <div class="logo-text">
                         <h1 class="company-name">VIJAY ATTRI</h1>
@@ -122,6 +127,22 @@
                         <i class="fas fa-balance-scale practice-icon"></i>
                         <h3>Civil Litigation</h3>
                         <p>Aggressive representation in civil disputes, property matters, contract breaches, and debt recovery.</p>
+                        <div class="practice-card-footer">
+                            <span class="click-hint">Click for details <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                    <div class="practice-card interactive-element" onclick="openPracticeDetails('contract')">
+                        <i class="fas fa-file-contract practice-icon"></i>
+                        <h3>Contract Drafting</h3>
+                        <p>Comprehensive contract drafting and review services for businesses, individuals, and organizations.</p>
+                        <div class="practice-card-footer">
+                            <span class="click-hint">Click for details <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                    <div class="practice-card interactive-element" onclick="openPracticeDetails('adr')">
+                        <i class="fas fa-handshake practice-icon"></i>
+                        <h3>Alternative Dispute Resolution</h3>
+                        <p>Expert mediation, arbitration, and negotiation services for efficient conflict resolution.</p>
                         <div class="practice-card-footer">
                             <span class="click-hint">Click for details <i class="fas fa-arrow-right"></i></span>
                         </div>
@@ -284,6 +305,8 @@
                                     <option value="criminal-defense">Criminal Defense</option>
                                     <option value="corporate-law">Corporate Law</option>
                                     <option value="civil-litigation">Civil Litigation</option>
+                                    <option value="contract-drafting">Contract Drafting</option>
+                                    <option value="alternative-dispute-resolution">Alternative Dispute Resolution</option>
                                     <option value="intellectual-property">Intellectual Property</option>
                                     <option value="real-estate">Real Estate Law</option>
                                     <option value="family-law">Family Law</option>
@@ -625,6 +648,64 @@
                 "Strategic litigation planning",
                 "Court representation and advocacy",
                 "Settlement negotiations and mediation"
+            ]
+        },
+        contract: {
+            title: "Contract Drafting",
+            icon: "fas fa-file-contract",
+            description: "Comprehensive contract drafting and review services ensuring your agreements are legally sound and protect your interests.",
+            services: [
+                "Business contracts and agreements",
+                "Employment contracts and policies",
+                "Real estate contracts and leases",
+                "Partnership and joint venture agreements",
+                "Service level agreements (SLAs)",
+                "Non-disclosure agreements (NDAs)",
+                "Intellectual property licensing",
+                "Contract review and negotiation"
+            ],
+            expertise: [
+                "Extensive experience in drafting complex legal documents",
+                "Knowledge of Indian Contract Act and related laws",
+                "Expertise in industry-specific contract requirements",
+                "Strong attention to detail and legal compliance",
+                "Experience in cross-border contract negotiations"
+            ],
+            process: [
+                "Initial consultation to understand requirements",
+                "Drafting customized contract terms",
+                "Legal review and risk assessment",
+                "Client review and feedback incorporation",
+                "Final execution and ongoing support"
+            ]
+        },
+        adr: {
+            title: "Alternative Dispute Resolution",
+            icon: "fas fa-handshake",
+            description: "Expert mediation, arbitration, and negotiation services for efficient and cost-effective conflict resolution.",
+            services: [
+                "Commercial mediation and arbitration",
+                "Family law mediation",
+                "Labor and employment disputes",
+                "Real estate and property disputes",
+                "Business partnership conflicts",
+                "Consumer disputes",
+                "International arbitration",
+                "Online dispute resolution (ODR)"
+            ],
+            expertise: [
+                "Certified mediator and arbitrator",
+                "Experience in various ADR institutions",
+                "Specialized training in negotiation techniques",
+                "Knowledge of ADR laws and procedures",
+                "Track record of successful dispute resolutions"
+            ],
+            process: [
+                "Initial assessment of dispute suitability for ADR",
+                "Selection of appropriate ADR method",
+                "Facilitation of negotiations or mediation",
+                "Arbitration proceedings when required",
+                "Enforcement of settlement agreements"
             ]
         },
         ip: {
