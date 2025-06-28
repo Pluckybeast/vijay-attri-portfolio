@@ -1814,29 +1814,30 @@ p {
         text-align: center;
     }
 
+    /* Improved Logo for Tablets */
     .book-logo {
-        gap: 8px;
+        gap: 10px;
     }
     
     .book-icon {
-        width: 40px;
-        height: 48px;
+        width: 45px;
+        height: 54px;
     }
     
     .book {
-        width: 32px;
-        height: 40px;
+        width: 36px;
+        height: 45px;
     }
     
     .book-spine {
         width: 5px;
-        height: 40px;
+        height: 45px;
     }
     
     .book-pages {
-        right: 2px;
-        top: 8px;
-        width: 20px;
+        right: 3px;
+        top: 9px;
+        width: 22px;
         height: 1.5px;
         box-shadow: 
             0 5px 0 var(--white), 
@@ -1846,13 +1847,17 @@ p {
     }
     
     .logo-text h2 {
-        font-size: 16px;
-        letter-spacing: 0.3px;
+        font-size: 18px;
+        letter-spacing: 0.4px;
+        font-weight: 700;
+        color: var(--primary-color);
     }
     
     .logo-text p {
-        font-size: 9px;
-        letter-spacing: 1px;
+        font-size: 10px;
+        letter-spacing: 1.2px;
+        font-weight: 600;
+        color: var(--text-muted);
     }
 }
 
@@ -1881,29 +1886,30 @@ p {
         grid-template-columns: 1fr;
     }
 
+    /* Improved Logo for Mobile Phones */
     .book-logo {
-        gap: 6px;
+        gap: 8px;
     }
     
     .book-icon {
-        width: 35px;
-        height: 42px;
+        width: 40px;
+        height: 48px;
     }
     
     .book {
-        width: 28px;
-        height: 35px;
+        width: 32px;
+        height: 40px;
     }
     
     .book-spine {
         width: 4px;
-        height: 35px;
+        height: 40px;
     }
     
     .book-pages {
         right: 2px;
-        top: 7px;
-        width: 18px;
+        top: 8px;
+        width: 20px;
         height: 1px;
         box-shadow: 
             0 4px 0 var(--white), 
@@ -1913,12 +1919,16 @@ p {
     }
     
     .logo-text h2 {
-        font-size: 14px;
-        letter-spacing: 0.2px;
+        font-size: 16px;
+        letter-spacing: 0.3px;
+        font-weight: 700;
+        color: var(--primary-color);
     }
     
     .logo-text p {
-        font-size: 8px;
-        letter-spacing: 0.8px;
+        font-size: 9px;
+        letter-spacing: 1px;
+        font-weight: 600;
+        color: var(--text-muted);
     }
 }
