@@ -1740,6 +1740,27 @@ p {
     transform: translateX(4px);
 }
 
+/* Ampersand styling for logo */
+.ampersand {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2em;
+    color: var(--accent-color);
+    margin-right: 2px;
+    vertical-align: middle;
+}
+
+/* Ensure logo is always visible in navbar on mobile */
+@media (max-width: 768px) {
+    .logo {
+        display: flex !important;
+        align-items: center !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        position: relative !important;
+        z-index: 1001;
+    }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav-links {
