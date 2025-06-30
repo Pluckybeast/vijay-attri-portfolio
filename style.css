@@ -25,7 +25,7 @@
     
     /* Text Colors */
     --text-color: #1e293b;
-    --text-muted: #64748b;
+    --text-muted: #475569;
     --text-light: #94a3b8;
     
     /* Background Colors */
@@ -187,9 +187,10 @@ p {
     box-shadow: var(--shadow-lg);
 }
 
-.btn-primary:hover {
-    transform: translateY(-2px);
+.btn-primary:hover, .btn-primary:focus {
+    transform: translateY(-2px) scale(1.04);
     box-shadow: var(--shadow-xl);
+    filter: brightness(1.08);
     color: var(--white);
 }
 
@@ -199,10 +200,10 @@ p {
     border: 2px solid var(--primary-color);
 }
 
-.btn-secondary:hover {
+.btn-secondary:hover, .btn-secondary:focus {
     background: var(--primary-color);
     color: var(--white);
-    transform: translateY(-2px);
+    border-color: var(--primary-dark);
 }
 
 /* Modern Navigation */
@@ -791,10 +792,12 @@ p {
     opacity: 0.05;
 }
 
-.practice-card:hover {
-    transform: translateY(-8px);
+.practice-card:hover, .practice-card:focus {
+    transform: translateY(-6px) scale(1.03);
     box-shadow: var(--shadow-xl);
-    border-color: var(--primary-color);
+    border-color: var(--accent-color);
+    cursor: pointer;
+    transition: all var(--transition-normal);
 }
 
 .practice-icon {
@@ -875,10 +878,12 @@ p {
     transform: scaleY(1);
 }
 
-.publication-card:hover {
-    transform: translateY(-4px);
+.publication-card:hover, .publication-card:focus {
+    transform: translateY(-6px) scale(1.03);
     box-shadow: var(--shadow-xl);
     border-color: var(--primary-color);
+    cursor: pointer;
+    transition: all var(--transition-normal);
 }
 
 .publication-header {
@@ -1011,10 +1016,12 @@ p {
     transform: scale(1.1);
 }
 
-.testimonial-card-modern:hover {
-    transform: translateY(-4px);
+.testimonial-card-modern:hover, .testimonial-card-modern:focus {
+    transform: translateY(-6px) scale(1.03);
     box-shadow: var(--shadow-xl);
     border-color: var(--accent-color);
+    cursor: pointer;
+    transition: all var(--transition-normal);
 }
 
 .testimonial-avatar {
@@ -1108,9 +1115,12 @@ p {
     transform: scaleY(1);
 }
 
-.contact-info-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
+.contact-info-card:hover, .contact-info-card:focus {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--primary-color);
+    cursor: pointer;
+    transition: all var(--transition-normal);
 }
 
 .contact-info-card h3 {

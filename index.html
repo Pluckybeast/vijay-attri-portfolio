@@ -37,6 +37,16 @@
       gtag('config', 'G-PND3J49F8L');
     </script>
     <meta name="google-site-verification" content="YOUR_UNIQUE_CODE" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <style>
+      .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
 </head>
 <body>
     <header class="main-header">
@@ -56,11 +66,11 @@
                         </div>
                     </div>
                 </a>
-                <div class="menu-toggle">
+                <button class="menu-toggle" aria-label="Open navigation menu" type="button">
                     <span></span>
                     <span></span>
                     <span></span>
-                </div>
+                </button>
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
@@ -111,14 +121,14 @@
         </section>
 
         <!-- ABOUT SECTION -->
-        <section id="about" class="about-section fade-in">
+        <section id="about" class="about-section fade-in" data-aos="fade-up">
             <div class="container">
                 <div class="section-header">
                 <h2>About Vijay Attri</h2>
                 </div>
                 <div class="about-flex">
-                    <img class="section-photo" src="legal2.jpg" alt="About Legal" loading="lazy">
-                    <div class="about-card">
+                    <img class="section-photo" src="legal2.jpg" alt="About Legal" loading="lazy" data-aos="fade-right" data-aos-duration="900">
+                    <div class="about-card" data-aos="fade-left" data-aos-duration="900">
                         <p>Vijay Attri is a seasoned legal professional with a Bachelor of Arts and Bachelor of Legislative Law (B.A LL.B Hon's) degree from GLA University, Mathura. Admitted to practice across All India, he brings a robust 3 years of experience in navigating complex legal landscapes.</p>
                         <p>Specializing in a diverse range of legal fields, Vijay Attri is committed to delivering exceptional legal services. His practice areas encompass Corporate Law, Civil Litigation, Intellectual Property, Real Estate, Family Law, and Criminal Defense, ensuring comprehensive support for his clients.</p>
                         <p>A member of the Delhi High Court, Vijay Attri is known for his analytical acumen, strategic thinking, and dedication to achieving favorable outcomes. He believes in a client-centric approach, prioritizing clear communication and personalized legal solutions.</p>
@@ -128,50 +138,50 @@
         </section>
 
         <!-- PRACTICE AREAS SECTION -->
-        <section id="practice-areas" class="practice-section alt-bg fade-in">
+        <section id="practice-areas" class="practice-section alt-bg fade-in" data-aos="fade-up">
             <div class="container">
                 <div class="section-header">
                 <h2>My Practice Areas</h2>
                 </div>
-                <img class="section-photo" src="legal3.jpg" alt="Practice Areas Legal" loading="lazy">
+                <img class="section-photo" src="legal3.jpg" alt="Practice Areas Legal" loading="lazy" data-aos="fade-right" data-aos-duration="900">
                 <div class="practice-grid">
-                    <div class="practice-card" data-modal="criminal-defense">
+                    <div class="practice-card" data-modal="criminal-defense" data-aos="zoom-in" data-aos-delay="100">
                         <i class="fas fa-gavel practice-icon"></i>
                         <h3>Criminal Defense</h3>
                         <p>Vigorous defense for individuals facing criminal charges, ensuring protection of rights and fair legal process.</p>
                         <button class="learn-more-btn">Learn More</button>
                     </div>
-                    <div class="practice-card" data-modal="corporate-law">
+                    <div class="practice-card" data-modal="corporate-law" data-aos="zoom-in" data-aos-delay="200">
                         <i class="fas fa-building practice-icon"></i>
                         <h3>Corporate Law</h3>
                         <p>Expert legal guidance for businesses on compliance, contracts, mergers, acquisitions, and corporate governance.</p>
                         <button class="learn-more-btn">Learn More</button>
                     </div>
-                    <div class="practice-card" data-modal="civil-litigation">
+                    <div class="practice-card" data-modal="civil-litigation" data-aos="zoom-in" data-aos-delay="300">
                         <i class="fas fa-balance-scale practice-icon"></i>
                         <h3>Civil Litigation</h3>
                         <p>Aggressive representation in civil disputes, property matters, contract breaches, and debt recovery.</p>
                         <button class="learn-more-btn">Learn More</button>
                     </div>
-                    <div class="practice-card" data-modal="intellectual-property">
+                    <div class="practice-card" data-modal="intellectual-property" data-aos="zoom-in" data-aos-delay="400">
                         <i class="fas fa-lightbulb practice-icon"></i>
                         <h3>Intellectual Property</h3>
                         <p>Protecting your innovations, trademarks, copyrights, and other intellectual assets through strategic legal measures.</p>
                         <button class="learn-more-btn">Learn More</button>
                     </div>
-                    <div class="practice-card" data-modal="real-estate">
+                    <div class="practice-card" data-modal="real-estate" data-aos="zoom-in" data-aos-delay="500">
                         <i class="fas fa-home practice-icon"></i>
                         <h3>Real Estate Law</h3>
                         <p>Comprehensive legal support for property transactions, disputes, land development, and regulatory compliance.</p>
                         <button class="learn-more-btn">Learn More</button>
                     </div>
-                    <div class="practice-card" data-modal="family-law">
+                    <div class="practice-card" data-modal="family-law" data-aos="zoom-in" data-aos-delay="600">
                         <i class="fas fa-heart practice-icon"></i>
                         <h3>Family Law</h3>
                         <p>Sensitive and effective representation in divorce, child custody, alimony, and other family-related legal matters.</p>
                         <button class="learn-more-btn">Learn More</button>
                     </div>
-                    <div class="practice-card" data-modal="adr">
+                    <div class="practice-card" data-modal="adr" data-aos="zoom-in" data-aos-delay="700">
                         <i class="fas fa-handshake practice-icon"></i>
                         <h3>Alternative Dispute Resolution</h3>
                         <p>Efficient mediation, arbitration, and negotiation services to resolve conflicts outside traditional court proceedings.</p>
@@ -182,14 +192,14 @@
         </section>
 
         <!-- PUBLICATIONS SECTION -->
-        <section id="publications" class="publications-section fade-in">
+        <section id="publications" class="publications-section fade-in" data-aos="fade-up">
             <div class="container">
-                <img class="section-photo" src="legal4.jpg" alt="Legal Publications" style="margin-bottom: 24px; max-width: 220px; float: right;" loading="lazy">
+                <img class="section-photo" src="legal4.jpg" alt="Legal Publications" style="margin-bottom: 24px; max-width: 220px; float: right;" loading="lazy" data-aos="fade-left" data-aos-duration="900">
                 <div class="section-header">
                 <h2>Publications & Research</h2>
                 </div>
                 <div class="publications-grid">
-                    <div class="publication-card">
+                    <div class="publication-card" data-aos="fade-up" data-aos-delay="100">
                         <div class="publication-header">
                             <h3>"Live Streaming and Broadcasting Rights Under Copyright"</h3>
                             <span class="publication-date">2023</span>
@@ -204,7 +214,7 @@
                         </div>
                     </div>
 
-                    <div class="publication-card">
+                    <div class="publication-card" data-aos="fade-up" data-aos-delay="200">
                         <div class="publication-header">
                             <h3>"The National Logistics Policy 2022: An Overview"</h3>
                             <span class="publication-date">2022</span>
@@ -219,7 +229,7 @@
                         </div>
                     </div>
 
-                    <div class="publication-card">
+                    <div class="publication-card" data-aos="fade-up" data-aos-delay="300">
                         <div class="publication-header">
                             <h3>"What Current Threats Exist to the Privacy of Personal and Organizational Data?"</h3>
                             <span class="publication-date">2023</span>
@@ -234,7 +244,7 @@
                         </div>
                     </div>
 
-                    <div class="publication-card">
+                    <div class="publication-card" data-aos="fade-up" data-aos-delay="400">
                         <div class="publication-header">
                             <h3>"A Critical Examination of the Shift from Litigation to Alternative Dispute Resolution"</h3>
                             <span class="publication-date">2022</span>
@@ -249,7 +259,7 @@
                         </div>
                     </div>
 
-                    <div class="publication-card">
+                    <div class="publication-card" data-aos="fade-up" data-aos-delay="500">
                         <div class="publication-header">
                             <h3>"Case Analysis: Sonadhar v. State of Chhattisgarh SLP (Crl) No. 529/2021"</h3>
                             <span class="publication-date">2021</span>
@@ -268,13 +278,13 @@
         </section>
 
         <!-- TESTIMONIALS SECTION -->
-        <section id="testimonials" class="testimonials-section alt-bg fade-in">
+        <section id="testimonials" class="testimonials-section alt-bg fade-in" data-aos="fade-up">
             <div class="container">
                 <div class="section-header">
                 <h2>What Clients Say</h2>
                         </div>
                 <div class="testimonials-grid">
-                    <div class="testimonial-card-modern">
+                    <div class="testimonial-card-modern" data-aos="flip-left" data-aos-delay="100">
                         <div class="testimonial-avatar"><i class="fas fa-user-tie"></i></div>
                         <p class="testimonial-quote">Vijay Attri's expertise in corporate law is unmatched. He navigated our complex merger with such precision, ensuring a seamless and favorable outcome. Truly a brilliant advocate!</p>
                         <div class="testimonial-meta">
@@ -282,7 +292,7 @@
                             <span class="testimonial-company">Director, Indus Innovations</span>
                         </div>
                         </div>
-                    <div class="testimonial-card-modern">
+                    <div class="testimonial-card-modern" data-aos="flip-left" data-aos-delay="200">
                         <div class="testimonial-avatar"><i class="fas fa-user"></i></div>
                         <p class="testimonial-quote">For my property dispute, Mr. Attri provided clear, strategic advice and relentless representation. His dedication secured a swift and just resolution. Highly professional and effective.</p>
                         <div class="testimonial-meta">
@@ -290,7 +300,7 @@
                             <span class="testimonial-company">Real Estate Developer</span>
                         </div>
                         </div>
-                    <div class="testimonial-card-modern">
+                    <div class="testimonial-card-modern" data-aos="flip-left" data-aos-delay="300">
                         <div class="testimonial-avatar"><i class="fas fa-user-graduate"></i></div>
                         <p class="testimonial-quote">Facing a legal challenge for my intellectual property felt daunting until I consulted Vijay Attri. He protected my innovations diligently and achieved the desired result. Exceptional service!</p>
                         <div class="testimonial-meta">
@@ -298,7 +308,7 @@
                             <span class="testimonial-company">Tech Entrepreneur</span>
                         </div>
                         </div>
-                    <div class="testimonial-card-modern">
+                    <div class="testimonial-card-modern" data-aos="flip-left" data-aos-delay="400">
                         <div class="testimonial-avatar"><i class="fas fa-user-friends"></i></div>
                         <p class="testimonial-quote">Vijay Attri handled my family matter with immense empathy and profound legal knowledge. He made a difficult time much easier and fought for my rights effectively. Forever grateful.</p>
                         <div class="testimonial-meta">
@@ -311,13 +321,13 @@
         </section>
 
         <!-- CONTACT SECTION -->
-        <section id="contact" class="contact-section fade-in">
+        <section id="contact" class="contact-section fade-in" data-aos="fade-up">
             <div class="container">
                 <div class="section-header">
                 <h2>Get in Touch</h2>
                 </div>
                 <div class="contact-flex">
-                    <div class="contact-info-card">
+                    <div class="contact-info-card" data-aos="fade-right" data-aos-duration="900">
                         <h3>Contact Information</h3>
                         <ul>
                             <li><strong><i class="fas fa-phone"></i> Phone:</strong> 9873980819</li>
@@ -341,7 +351,7 @@
                             <iframe src="https://www.google.com/maps?q=Chamber+No.+07+Patiala+House+Court,+New+Delhi-+110001&output=embed" width="100%" height="220" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
-                    <div class="contact-form-card feedback-form-modern">
+                    <div class="contact-form-card feedback-form-modern" data-aos="fade-left" data-aos-duration="900">
                         <h3>Send a Message</h3>
                         <form action="https://formspree.io/f/xovwybjl" method="POST" id="contact-form">
                             <div class="form-row">
@@ -438,8 +448,14 @@
         </div>
     </footer>
 
-    <div id="thank-you-message" style="display:none; text-align:center; padding:2rem; font-size:1.2rem; color:#1e3a8a; font-weight:600;">Thank you for reaching out! Your message has been sent successfully. We will get back to you soon.</div>
-
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: true,
+        duration: 800,
+        easing: 'ease-in-out',
+      });
+    </script>
     <script>
     document.addEventListener('DOMContentLoaded', function() {
         // Practice Area Modal Data
@@ -721,10 +737,10 @@
             anchor.addEventListener('click', function (e) {
                 const href = this.getAttribute('href');
                 if (href.length > 1 && document.querySelector(href)) {
-                e.preventDefault();
+                    e.preventDefault();
                     document.querySelector(href).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                        behavior: 'smooth'
+                    });
                 }
             });
         });
@@ -814,32 +830,23 @@
             }
         }
         const contactForm = document.getElementById('contact-form');
-        const thankYouMessage = document.getElementById('thank-you-message');
         if (contactForm) {
             contactForm.addEventListener('submit', function(e) {
                 if(!validateEmail()) {
                     e.preventDefault();
                     return;
                 }
-                // Show thank you message after successful Formspree submission
-                e.preventDefault();
-                const formData = new FormData(contactForm);
-                fetch(contactForm.action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: { 'Accept': 'application/json' }
-                }).then(response => {
-                    if (response.ok) {
-                        contactForm.style.display = 'none';
-                        thankYouMessage.style.display = 'block';
-                    } else {
-                        alert('There was a problem submitting your form. Please try again.');
-                    }
-                }).catch(() => {
-                    alert('There was a problem submitting your form. Please try again.');
-                });
+                // Allow default submission to Formspree
             });
         }
+
+        window.addEventListener('pageshow', function(event) {
+            // If the page was loaded from the bfcache or reloaded, reset the form
+            const contactForm = document.getElementById('contact-form');
+            if (contactForm) {
+                contactForm.reset();
+            }
+        });
     });
     </script>
 </body>
