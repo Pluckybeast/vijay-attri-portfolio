@@ -1810,25 +1810,16 @@ p {
         width: 100%;
     }
     .logo {
-        position: static;
         margin-left: 0;
         margin-right: 0;
-        left: 0;
-        top: 0;
         flex: 0 0 auto;
-        z-index: 1100;
     }
     .menu-toggle {
         display: flex !important;
-        position: static;
         margin-left: 0;
         margin-right: 0;
-        left: auto;
-        right: 0;
-        top: 0;
-        transform: none;
-        z-index: 1101;
         flex: 0 0 auto;
+        z-index: 1101;
     }
 }
 
