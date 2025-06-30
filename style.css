@@ -1788,7 +1788,7 @@ p {
         margin-top: 0 !important;
     }
     .nav-links.active {
-        display: flex;
+        display: flex !important;
         transform: none;
     }
     .nav-links li {
@@ -1799,9 +1799,36 @@ p {
         padding: 12px 0;
         font-size: 1.1rem;
         border-bottom: 1px solid var(--gray-200);
+        display: block;
+        text-align: left;
+    }
+    .nav-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .logo {
+        position: static;
+        margin-left: 0;
+        margin-right: 0;
+        left: 0;
+        top: 0;
+        flex: 0 0 auto;
+        z-index: 1100;
     }
     .menu-toggle {
-        display: flex;
+        display: flex !important;
+        position: static;
+        margin-left: 0;
+        margin-right: 0;
+        left: auto;
+        right: 0;
+        top: 0;
+        transform: none;
+        z-index: 1101;
+        flex: 0 0 auto;
     }
 }
 
@@ -1882,11 +1909,6 @@ p {
     .whatsapp-float {
         right: 30px;
         bottom: 100px;
-    }
-
-    .footer-flex {
-        flex-direction: column;
-        text-align: center;
     }
 
     /* Improved Logo for Tablets */
