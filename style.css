@@ -1771,7 +1771,37 @@ p {
         height: auto !important;
     }
     .nav-links {
-        margin-top: 60px !important;
+        display: none;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100vw;
+        background: var(--white);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2rem 1.5rem 2rem 1.5rem;
+        box-shadow: var(--shadow-lg);
+        z-index: 9999;
+        gap: 1.5rem;
+        overflow-y: auto;
+        max-height: 80vh;
+        margin-top: 0 !important;
+    }
+    .nav-links.active {
+        display: flex;
+        transform: none;
+    }
+    .nav-links li {
+        width: 100%;
+    }
+    .nav-links a {
+        width: 100%;
+        padding: 12px 0;
+        font-size: 1.1rem;
+        border-bottom: 1px solid var(--gray-200);
+    }
+    .menu-toggle {
+        display: flex;
     }
 }
 
