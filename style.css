@@ -716,12 +716,14 @@ p {
 }
 
 .about-card {
-    background: var(--bg-secondary);
+    background: #fffbe6; /* soft yellow highlight */
+    border-left: 6px solid var(--accent-color);
+    box-shadow: 0 2px 12px rgba(30,58,138,0.07);
     padding: 2rem;
     border-radius: var(--radius-xl);
-    border-left: 4px solid var(--accent-color);
-    position: relative;
-    overflow: hidden;
+    margin-top: 1rem;
+    color: var(--text-color); /* ensure normal text color */
+    font-weight: normal; /* ensure normal weight */
 }
 
 .about-card::before {
@@ -738,6 +740,11 @@ p {
 
 .about-card:hover::before {
     transform: scaleY(1);
+}
+
+.about-card * {
+    font-weight: bold;
+    color: #b45309; /* Use your accent-dark or another strong color */
 }
 
 .about-card p {
@@ -1818,17 +1825,22 @@ p {
         align-items: center;
         justify-content: space-between;
         width: 100%;
+        position: relative;
     }
     .logo {
-        margin-left: 0;
-        margin-right: 0;
-        flex: 0 0 auto;
+        position: static !important;
+        left: 0 !important;
+        right: auto !important;
+        margin-left: 0 !important;
+        margin-right: auto !important;
+        z-index: 1100 !important;
     }
     .menu-toggle {
-        display: flex !important;
-        margin-left: 0;
-        margin-right: 0;
-        flex: 0 0 auto;
+        position: static !important;
+        margin-left: auto !important;
+        margin-right: 0 !important;
+        right: 0 !important;
+        left: auto !important;
         z-index: 1101;
     }
 }
