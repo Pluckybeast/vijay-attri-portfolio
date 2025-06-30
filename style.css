@@ -2030,3 +2030,10 @@ section h2, nav h2, article h2, aside h2 {
 section h3, nav h3, article h3, aside h3 {
   font-size: 1.5rem;
 }
+
+.input-error {
+    border-color: #e53935 !important;
+    background: #ffebee !important;
+    color: #b71c1c !important;
+    transition: border-color 0.3s, background 0.3s;
+}

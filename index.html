@@ -11,7 +11,7 @@
     <meta name="robots" content="index, follow">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=2">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/png" href="favicon.png" sizes="512x512">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
@@ -37,20 +37,6 @@
       gtag('config', 'G-PND3J49F8L');
     </script>
     <meta name="google-site-verification" content="YOUR_UNIQUE_CODE" />
-    <style>
-      @media (max-width: 768px) {
-        .nav-links {
-          display: none;
-        }
-        .nav-links.active {
-          display: flex;
-          flex-direction: column;
-        }
-        .menu-toggle {
-          display: flex;
-        }
-      }
-    </style>
 </head>
 <body>
     <header class="main-header">
@@ -131,7 +117,7 @@
                 <h2>About Vijay Attri</h2>
                 </div>
                 <div class="about-flex">
-                    <img class="section-photo" src="legal2.jpg" alt="About Legal">
+                    <img class="section-photo" src="legal2.jpg" alt="About Legal" loading="lazy">
                     <div class="about-card">
                         <p>Vijay Attri is a seasoned legal professional with a Bachelor of Arts and Bachelor of Legislative Law (B.A LL.B Hon's) degree from GLA University, Mathura. Admitted to practice across All India, he brings a robust 3 years of experience in navigating complex legal landscapes.</p>
                         <p>Specializing in a diverse range of legal fields, Vijay Attri is committed to delivering exceptional legal services. His practice areas encompass Corporate Law, Civil Litigation, Intellectual Property, Real Estate, Family Law, and Criminal Defense, ensuring comprehensive support for his clients.</p>
@@ -147,7 +133,7 @@
                 <div class="section-header">
                 <h2>My Practice Areas</h2>
                 </div>
-                <img class="section-photo" src="legal3.jpg" alt="Practice Areas Legal">
+                <img class="section-photo" src="legal3.jpg" alt="Practice Areas Legal" loading="lazy">
                 <div class="practice-grid">
                     <div class="practice-card" data-modal="criminal-defense">
                         <i class="fas fa-gavel practice-icon"></i>
@@ -198,7 +184,7 @@
         <!-- PUBLICATIONS SECTION -->
         <section id="publications" class="publications-section fade-in">
             <div class="container">
-                <img class="section-photo" src="legal4.jpg" alt="Legal Publications" style="margin-bottom: 24px; max-width: 220px; float: right;">
+                <img class="section-photo" src="legal4.jpg" alt="Legal Publications" style="margin-bottom: 24px; max-width: 220px; float: right;" loading="lazy">
                 <div class="section-header">
                 <h2>Publications & Research</h2>
                 </div>
@@ -357,7 +343,7 @@
                     </div>
                     <div class="contact-form-card feedback-form-modern">
                         <h3>Send a Message</h3>
-                        <form name="contact" method="POST" data-netlify="true">
+                        <form action="https://formspree.io/f/xovwybjl" method="POST" id="contact-form">
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="name"><i class="fas fa-user"></i> Full Name:</label>
@@ -451,6 +437,8 @@
             </div>
         </div>
     </footer>
+
+    <div id="thank-you-message" style="display:none; text-align:center; padding:2rem; font-size:1.2rem; color:#1e3a8a; font-weight:600;">Thank you for reaching out! Your message has been sent successfully. We will get back to you soon.</div>
 
     <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -767,7 +755,6 @@
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
         };
-
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -810,7 +797,50 @@
         }
         window.addEventListener('scroll', checkStatsInView);
         checkStatsInView(); // Run on load in case already in view
-        });
+
+        // Enhanced form email validation
+        function validateEmail() {
+            const emailInput = document.querySelector('input[type="email"]');
+            const email = emailInput.value.trim();
+            const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+            if (!emailPattern.test(email)) {
+                emailInput.classList.add('input-error');
+                emailInput.focus();
+                alert('Please enter a valid email address.');
+                return false;
+            } else {
+                emailInput.classList.remove('input-error');
+                return true;
+            }
+        }
+        const contactForm = document.getElementById('contact-form');
+        const thankYouMessage = document.getElementById('thank-you-message');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                if(!validateEmail()) {
+                    e.preventDefault();
+                    return;
+                }
+                // Show thank you message after successful Formspree submission
+                e.preventDefault();
+                const formData = new FormData(contactForm);
+                fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                }).then(response => {
+                    if (response.ok) {
+                        contactForm.style.display = 'none';
+                        thankYouMessage.style.display = 'block';
+                    } else {
+                        alert('There was a problem submitting your form. Please try again.');
+                    }
+                }).catch(() => {
+                    alert('There was a problem submitting your form. Please try again.');
+                });
+            });
+        }
+    });
     </script>
 </body>
 </html>
